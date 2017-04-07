@@ -1,0 +1,241 @@
+@import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+
+body{
+    margin: 0;
+    padding: 0;
+    background: #fff;
+
+    width: 100%;
+    color: #fff;
+    font-family: Arial;
+    font-size: 12px;
+}
+
+.tophead{
+
+
+    position: fixed;
+    padding-left: 10%;
+
+    top: 0px;
+    left: 0;
+    right: 0px;
+    bottom:0px;
+    width: auto;
+    height: 13%;
+    align-content: center;
+    background-color: aliceblue;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.1))); /* Chrome,Safari4+ */
+
+}
+.body{
+    position: absolute;
+    top: 0px;
+    left: 00px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: auto;
+    background-image: url("../csedu.png");
+    background-size: cover;
+    -webkit-filter: blur(15px);
+    z-index: 0;
+}
+
+.grad{
+    position: absolute;
+    top: 88px;
+    left: 0px;
+    right: 0px;
+    bottom: 10%;
+    width: 41%;
+    height: auto;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
+    z-index: 1;
+    opacity: 0.7;
+}
+
+.welcome{
+    position: absolute;
+    top: calc(50% - 100px);
+    left: calc(50% - 300px);
+    z-index: 2;
+    float: left;;
+    color: #fff;
+    font-family: 'Exo', sans-serif;
+    font-size: 35px;
+    font-weight: 200;
+}
+
+.header{
+    position: absolute;
+    top: calc(50% - 35px);
+    left: calc(50% - 255px);
+    z-index: 2;
+}
+
+.header div{
+    float: left;
+    color: #fff;
+    font-family: 'Exo', sans-serif;
+    font-size: 35px;
+    font-weight: 200;
+}
+
+.header div span{
+    color: #5379fa !important;
+}
+.credit{
+    left:0;
+    right: 0;
+    top: 90%;
+
+    position: absolute;
+
+    width: 100%;
+
+    text-align: center;
+    background-color: gainsboro;
+    color: black;
+    font-family: 'Exo', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+/* Dropdown Button */
+.dropbtn {
+    top: 2%;
+    left:0;
+    bottom: 92%;
+    color: white;
+    width: 45%;
+    height: 40%;
+    border: none;
+    cursor: pointer;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.1))); /* Chrome,Safari4+ */
+
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: rgba(164, 164, 173, 0.14);
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+.login{
+    position: absolute;
+    top: calc(50% - 75px);
+    left: calc(50% - 50px);
+    height: 150px;
+    width: 350px;
+    padding: 10px;
+    z-index: 2;
+}
+
+.login input[type=text]{
+    width: 250px;
+    height: 30px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 2px;
+    color: #fff;
+    font-family: 'Exo', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 4px;
+}
+
+.login input[type=password]{
+    width: 250px;
+    height: 30px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 2px;
+    color: #fff;
+    font-family: 'Exo', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 4px;
+    margin-top: 10px;
+}
+
+.login input[type=button]{
+    width: 260px;
+    height: 35px;
+    background: #fff;
+    border: 1px solid #fff;
+    cursor: pointer;
+    border-radius: 2px;
+    color: #a18d6c;
+    font-family: 'Exo', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 6px;
+    margin-top: 10px;
+}
+
+.login input[type=button]:hover{
+    opacity: 0.8;
+}
+
+.login input[type=button]:active{
+    opacity: 0.6;
+}
+
+.login input[type=text]:focus{
+    outline: none;
+    border: 1px solid rgba(255,255,255,0.9);
+}
+
+.login input[type=password]:focus{
+    outline: none;
+    border: 1px solid rgba(255,255,255,0.9);
+}
+
+.login input[type=button]:focus{
+    outline: none;
+}
+
+::-webkit-input-placeholder{
+    color: rgba(255,255,255,0.6);
+}
+
+::-moz-input-placeholder{
+    color: rgba(255,255,255,0.6);
+}
