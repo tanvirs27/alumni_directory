@@ -37,7 +37,7 @@ body{
     bottom: 0px;
     width: 100%;
     height: auto;
-    background-image: url("../csedu.png");
+    background-image: url("../img/csedu.png");
     background-size: cover;
     -webkit-filter: blur(15px);
     z-index: 0;
