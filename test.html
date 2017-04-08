@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Linkedin Test</title>
+
+    <script type="text/javascript" src="http://platform.linkedin.com/in.js">
+        api_key: 81t2pllbr8lep1
+        onLoad: OnLinkedInFrameworkLoad
+        authorize: false
+    </script>
+</head>
+<body>
+
+<script type="in/Login">
+</script>
+
+<script type="text/javascript">
+
+    function OnLinkedInFrameworkLoad() {
+        IN.Event.on(IN, "auth", OnLinkedInAuth);
+    }
+
+    function OnLinkedInAuth() {
+        IN.API.Profile("me").result(ShowProfileData);
+    }
+
+    function ShowProfileData(profiles) {
+        var member = profiles.values[0];
+        var id=member.id;
+        var firstName=member.firstName;
+        var lastName=member.lastName;
+        var photo=member.pictureUrl;
+        var headline=member.headline;
+
+        for (var key in profiles.values[0]) {
+            if (profiles.values[0].hasOwnProperty(key)) {
+                console.log(key+"\n");
+            }
+        }
+
+        //use information captured above
+
+        console.log(id+" "+firstName+" "+lastName+" "+photo+" "+headline);
+    }
+</script>
+
+</body>
+</html>
