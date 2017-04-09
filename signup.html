@@ -6,7 +6,9 @@
         <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/main.css">
         <link rel="shortcut icon" href="img/images.png">
-    </head>
+        <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/redmond/jquery-ui.css">
+
+  </head>
     <body>
 
         <a href="https://www.cse.du.ac.bd">
@@ -26,6 +28,7 @@
         <h1 >Sign Up</h1>
 
         <img src="img/images.png" onmouseover="ppChange()" onmouseleave="ppAfterMouse()" id="profilePicture">
+        <input type="file" id="uploadpic">
         <fieldset>
 
           
@@ -48,8 +51,9 @@
             <label for="phone">Phone No:</label>
             <input type="text" id="phone" name="phone">
 
-            <label for="dob">Date of Birth:</label>
-            <input type="date" id="dob" name="dob">
+            <label for="departure-date">Date of Birth:</label>
+            <!--<input type="date" id="dob" name="dob"> -->
+            <input id="departure-date" type="text" placeholder="DD-MM-YYYY">
             
 
         </fieldset>
@@ -96,6 +100,22 @@
 
       <!-- Load all jsavascrip files -->
       <script type="text/javascript" src="js/signup_main.js"></script>
-      
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.js"></script>
+
+        <script type="text/javascript">
+            $(function() {
+                $('#departure-date').datepicker({
+                    numberOfMonths: 1,
+                    showAnim: "fold",
+                    showButtonPanel: true,
+                    onSelect: (function(date) {
+                        $(this).val($(this).datepicker('getDate').toLocaleDateString());
+                    })
+                });
+            });
+        </script>
+
+
     </body>
 </html>

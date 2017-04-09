@@ -17,6 +17,12 @@ for(var i=1; i<=23; i++){
     Email: anandocse@gmail.com
  */
 
+
+
+document.getElementById("uploadpic").onchange = function () {
+    document.getElementById("profilePicture").src = this.previousElementSibling.value;
+};
+
 window.onscroll = function () {
     scrollFunc();
 }
