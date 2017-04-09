@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="626818d6-5781-4f38-ad01-f9316bd11ad6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/linkedin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/connect.inc.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/invite-send.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="626818d6-5781-4f38-ad01-f9316bd11ad6" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -370,12 +364,12 @@
       <updated>1490387641407</updated>
       <workItem from="1490387643161" duration="4977000" />
       <workItem from="1491560567192" duration="10663000" />
-      <workItem from="1491650114713" duration="2216000" />
+      <workItem from="1491650114713" duration="2916000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17856000" />
+    <option name="totallyTimeSpent" value="18556000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="0" />
