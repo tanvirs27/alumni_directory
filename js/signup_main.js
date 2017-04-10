@@ -43,7 +43,7 @@ function goUp() {
 var saved;
 function ppChange() {
     saved = document.getElementById("profilePicture").getAttribute("src");
-    var doc = document.getElementById("profilePicture").src = "../img/up_arrow.png";
+    var doc = document.getElementById("profilePicture").src = "img/up_arrow.png";
 }
 function ppAfterMouse() {
     document.getElementById("profilePicture").src = saved;
