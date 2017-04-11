@@ -58,8 +58,8 @@ body{
 
 .welcome{
     position: absolute;
-    top: calc(50% - 100px);
-    left: calc(50% - 300px);
+    top: calc(50% - 8%);
+    left: calc(50% - 37%);
     z-index: 2;
     float: left;;
     color: #fff;
@@ -70,8 +70,8 @@ body{
 
 .header{
     position: absolute;
-    top: calc(50% - 35px);
-    left: calc(50% - 255px);
+    top: calc(50% - 2%);
+    left: calc(50% - 40%);
     z-index: 2;
 }
 
