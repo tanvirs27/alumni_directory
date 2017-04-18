@@ -9,44 +9,78 @@
     <link rel="shortcut icon" href="img/images.png">
     <link rel="script" href="js/logInMenu.js">
 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width" />
+
+
 </head>
 
-<body>
+<body lang="en">
 
-<div class="body"></div>
-<a href="https://www.cse.du.ac.bd">
-    <div class="tophead">
-    <img src="img/header2.3.1-1.png" align="center">
-    </div><br>
+<div class="container-fluid">
 
-</a>
-<div class="grad"></div>
+    <div class="body"></div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+            <a href="https://www.cse.du.ac.bd">
+                <div class="tophead">
+                    <img class="img-responsive" src="img/header2.3.1-1.png" align="center">
+                </div>
+            </a>
 
-<div class="welcome">
-    Welcome To
-</div>
-<br>
-<div class="header">
-    <div>Alumni <span>Directory</span></div>
-</div>
-<br>
-<div class="login">
-    <input type="text" placeholder="username" name="user"><br>
-    <input type="password" placeholder="password" name="password"><br>
-    <input type="button" value="Login">
-</div>
-
-<div class="credit">
-    <p>This website is developed by Tanvir Shahariar Rifat and Muhaimin Anando.</p>
-</div>
-
-
-<div class="dropdown">
-    <img src="img/right_arrow.png" onclick="myFunction()" class="dropbtn"></img>
-    <div id="myDropdown" class="dropdown-content">
-        <a href="#">Admin</a>
+            <div class="dropdown">
+                <img src="img/right_arrow.png" onclick="myFunction()" class="img-responsive dropbtn"></img>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#">Admin</a>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div class="grad"></div>
+
+    <div class="welcome">
+        <p>Welcome To</p>
+    </div>
+
+    <div class="header">
+        <div>Alumni <span>Directory</span></div>
+    </div>
+
+
+    <div class="login">
+        <div class="form-group">
+            <input class="form-control" type="text" placeholder="username" name="user"><br>
+        </div>
+
+        <div class="form-group">
+            <input class="form-control" type="password" placeholder="password" name="password"><br>
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="button" value="Login">
+        </div>
+
+    </div>
+
+    <div class="credit">
+        <p>This website is developed by Tanvir Shahariar Rifat and Muhaimin Anando.</p>
+    </div>
+
+
+
+
 </div>
+
+
+
+
 <script src="js/logInMenu.js"/>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
