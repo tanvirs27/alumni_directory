@@ -251,6 +251,24 @@ body{
     margin-top: 10px;
 }
 
+.forgetPass{
+    color: #fff;
+    font-size: 11px;
+    font-weight: 400;
+}
+.request{
+    color: #fff;
+    padding-left: 20%;
+    font-size: 11px;
+    font-weight: 400;
+}
+.request:hover{
+    color: #f7f7f7;
+}
+.forgetPass:hover{
+    color: #f7f7f7;
+}
+
 .login input[type=button]:hover{
     opacity: 0.8;
 }
