@@ -136,3 +136,26 @@ body {
         min-width: 500px;
     }
 }
+
+
+/************************************************
+	styles for search results
+ ************************************************/
+.featured-block{padding:55px 0; overflow: hidden;}
+.featured-block .block{}
+.featured-block .block .thumbnail{box-shadow: 0 3px 3px 0 #e0e0e0;}
+.featured-block .caption{padding: 25px 15px;}
+.featured-block .caption h1{font-size: 18px; line-height: 24px;color: #01264c; text-transform: uppercase;font-family: 'source_sans_probold';  padding-bottom: 10px; letter-spacing: 1px;}
+.featured-block .caption p{font-size: 14px; line-height: 24px; color: #000000;font-family: 'source_sans_proregular';}
+.featured-block .caption .btn{color: #fff; background: #01264c; font-size: 12px; font-family: 'source_sans_problack'; border-radius: 30px; text-transform: uppercase; line-height: 13px;}
+.featured-block .caption .btn:hover{color: #fff; background: #454855; transition:all 1s;}
+
+
+.block .panel-default > .panel-heading {background: #fff;color: #01264c; font-size: 16px; padding: 0;}
+.block .panel-default > .panel-heading .panel-title{line-height: 40px;}
+.block .panel-default > .panel-heading .panel-title > a:hover{text-decoration: none;}
+.block .panel-default > .panel-collapse{background: #f0f0f0;color: #989898; font-size: 14px;}
+.block .panel-default > .panel-collapse .panel-body {padding: 20px 15px;}
+.block .panel-group .panel + .panel {
+    margin-top: 10px;
+}
