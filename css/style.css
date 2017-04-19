@@ -101,7 +101,7 @@ form {
 }
 
 /* Add Zoom Animation */
-.animate {
+.myanimate {
     -webkit-animation: animatezoom 0.6s;
     animation: animatezoom 0.6s
 }
