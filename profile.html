@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="shortcut icon" href="img/images.png">
 
     <title>CSEDU Alumni Directory</title>
 
@@ -16,6 +17,7 @@
     <link href="css/bootstrap.css" rel="stylesheet">
 
     <link href="css/search.css" rel="stylesheet">
+    <link href="css/profiledesign.css" rel="stylesheet">
 
     <!-- Custom CSS -->
 
@@ -71,7 +73,148 @@
 </nav>
 
 
+<div class="container" style="padding-top: 60px;">
+    <h1 class="page-header">My Profile</h1>
 
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="text-center">
+                <img src="img/dummy.png" class="avatar img-circle img-thumbnail profile_picture" alt="avatar">
+                <h6>Upload a different photo...</h6>
+                <input type="file" class="text-center center-block well well-sm">
+            </div>
+        </div>
+
+        <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
+            <div id="alert_message">
+
+            </div>
+            <h3>Personal info</h3>
+
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Your name:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" placeholder="myname" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Your email:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="email" placeholder="myemail@mymail.com" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Your Password:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="password" placeholder="Xabc124" id="mypass" required="required" onchange="makeConfirmPasswordWriteable()">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Confirm Password:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="password" placeholder="Xabc124" id="confirmpass" onprogress="testingPassowrd()" onfocus="testingPassowrd()" onchange="testingPassowrd()" readonly="readonly">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Batch:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="number" placeholder="20" >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Contact Number:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" placeholder="+8801xxxxxxxxx" >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Blood Group:</label>
+                    <div class="col-lg-8">
+                        <select class="form-control">
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Hometown:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" placeholder="Dhaka" >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Residing Address:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" placeholder="xxx/yy/abc-Dhaka" >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Residing State:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" placeholder="Dhaka" >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Residing Country:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" placeholder="Bangladesh" >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Current Working Place:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" placeholder="University Of Dhaka" >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Facebook Profile:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" placeholder="www.facebook.com/xxxxx" >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Linkedin Profile:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" placeholder="www.linkedin.com/xxxxx" >
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label"></label>
+                    <div class="col-md-8">
+                        <input class="btn btn-primary" value="Save Changes" type="button" id="submit_button" onclick="submitCheck()">
+                        <span></span>
+                        <input class="btn btn-default" value="Cancel" type="reset">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
 
 
     <!-- jQuery Version 1.11.1 -->
@@ -79,6 +222,7 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
+<script src="js/profile.js"></script>
 
 
 </body>

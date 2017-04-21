@@ -1,0 +1,14 @@
+.profile_picture{
+    position: relative;
+    height: 50%;
+    width: 50%;
+}
+
+
+.paddingDown{
+    margin-bottom: 10px;
+}
+
+.paddingLeft{
+    margin-left: 10%;
+}
