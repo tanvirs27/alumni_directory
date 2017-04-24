@@ -17,3 +17,51 @@ window.onclick = function(event) {
         }
     }
 }
+
+
+
+
+function login_func() {
+
+
+    var name1 = $("#username").val();
+    var password = $("#password").val();
+
+    if (name1 == '') {
+        document.getElementById("error_message").innerHTML = "Enter you email";
+    }
+    else if (password == '') {
+        document.getElementById("error_message").innerHTML = "Enter you password";
+    }
+    else {
+
+        $.post("php/login.php", {
+
+            user: name1,
+            pass: password
+
+        }, function (data) {
+
+            //alert(data);
+            /*$("#returnmessage").html("");
+             $("#returnmessage").append(data);
+
+             if(data.includes("Thank you for your valuable feedback")){
+             $("#form")[0].reset();
+             }
+             */
+            if (data.includes("1")) {
+                //REDIRECT
+                sessionStorage.setItem("user_email_login",name1);
+                window.location.href = "search.html";
+                //document.getElementById("error_message").innerHTML = data;
+            }
+            else {
+                document.getElementById("error_message").innerHTML = data;
+            }
+        });
+
+    }
+
+
+}

@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width">
 
+    <link href="css/bootstrap.css" rel="stylesheet">
+
 
 </head>
 
@@ -59,7 +61,11 @@
                             </div>
                             <a onclick="document.getElementById('mymodal').style.display='block'" href="#">Forgot Password?</a>
                             <div class="login button">
-                                <input type="submit" value="Login" />
+                                <input type="button" value="Login" id="submit_login" onclick="login_func()" />
+                            </div>
+                            <!--TODO : BG_ ERROR-->
+                            <div class="bg-info" id="error_message" align="center">
+
                             </div>
                             <p class="change_link">
                                 Not a member yet ?
@@ -130,8 +136,13 @@
 
 
 
-<script src="js/logInMenu.js"/>
+<script type="text/javascript" src="js/logInMenu.js"/>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <!-- jQuery Version 1.11.1 -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
 
 
 </body>
