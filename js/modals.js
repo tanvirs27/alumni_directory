@@ -25,7 +25,10 @@ function logInSuccess() {
 }
 
 function reqSuccess() {
+    //document.getElementById("requestModal").innerHTML="<p class='h3'>Request Send. Please Wait till admin confirm.</p>"
+    //document.getElementById("reqSend").style.display='none';
     reqCancel();
+    alert("Request Send. Wait Till Admin confirms.");
 }
 function reqCancel() {
     document.getElementById("requestModal").style.display='none';
