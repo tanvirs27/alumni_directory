@@ -23,3 +23,10 @@ function logInCancel() {
 function logInSuccess() {
     logInCancel();
 }
+
+function reqSuccess() {
+    reqCancel();
+}
+function reqCancel() {
+    document.getElementById("requestModal").style.display='none';
+}
