@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modals</title>
+    <link rel="shortcut icon" href="img/images.png">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/modals.css">
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <button class="btn-block btn-default" onclick="document.getElementById('loginModal').style.display='block'">Okay</button>
+        </div>
+    </div>
+
+    <div class="modal" id="loginModal">
+        <div class="row">
+            <div class="col-xs-9 col-lg-9 col-sm-9 col-md-9">
+                <form class="form-horizontal modal-content myanimate">
+                    <div class="modal-header" style="margin-bottom: 10px">
+                        <p class="h3">Login</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginEmail" class="control-label col-sm-3 col-md-3 col-xs-3 col-lg-3">Your Email:</label>
+                        <div class="col-md-6 col-xs-6 col-lg-6 col-sm-6">
+                            <input type="email" class="form-control" id="loginEmail" placeholder="abc@xyz.com">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword" class="control-label col-sm-3 col-md-3 col-xs-3 col-lg-3">Your Password:</label>
+                        <div class="col-md-6 col-xs-6 col-lg-6 col-sm-6">
+                            <input type="password" class="form-control" id="loginPassword" placeholder="abc123">
+                        </div>
+                    </div>
+                    <!--
+                    <div class="form-group">
+                        <label for="loginKeepmeLoggedin" class="control-label col-sm-6 col-md-3 col-xs-3 col-lg-3">keep me logged in</label>
+                        <div class="checkbox col-md-6 col-xs-6 col-lg-6 col-sm-6">
+                            <input type="checkbox" class="checkbox"id="loginKeepmeLoggedin">
+                        </div>
+                    </div>
+                    -->
+                    <div class="form-group">
+                        <div class="col-lg-7 col-md-7 col-sm-5 col-xs-5">
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-xs-5 col-sm-5">
+                            <a href="#" onclick="logInForgetPassword()">Forgot Password?</a>
+                        </div>
+                    </div>
+                    <div class="form-inline modal-footer">
+                        <button class="btn-success form-control" style="margin-bottom: 5px" onclick="logInSuccess()">Login</button>
+                        <button class="btn-warning form-control" style="margin-bottom: 5px" onclick="logInCancel()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="forgetPassword" style="align-self: center">
+
+        <div class="row">
+            <div class="col-md-9 col-lg-9 col-xs-9 col-sm-9" style="font-family: 'Exo', 'Raleway', sans-serif; font-size: medium; font-weight: 100;">
+                <form class="form-horizontal modal-content myanimate">
+
+                    <div class="modal-header" style="margin-bottom: 10px">
+                        <p class="h3">Forget Password</p>
+                    </div>
+
+                    <div class="form-group" id="forgetEmailSubmission">
+                        <div class="col-md-1 col-xs-1 col-lg-1 col-sm-1"></div>
+                        <label class="control-label col-sm-3 col-md-3 col-xs-3 col-lg-3" for="forgetEmail">Your Email Address:</label>
+                        <div class="col-md-6 col-xs-6 col-lg-6 col-sm-6">
+                                <input class="form-control" type="email" placeholder="abc@xyz.com" id="forgetEmail">
+                        </div>
+
+                    </div>
+
+                    <div class="form-inline modal-footer">
+                        <button id="forgetPasswordSuccess"class="form-control btn-success" onclick="forgetPasswordSubmit()" style="margin-bottom: 5px">Submit</button>
+                        <button id="forgetPasswordC"class="form-control btn-warning" onclick="forgetPasswordCancel()" style="margin-bottom: 5px">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+<script src="js/bootstrap.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/modals.js"></script>
+
+</body>
+</html>

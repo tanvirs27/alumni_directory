@@ -12,3 +12,14 @@
 .paddingLeft{
     margin-left: 10%;
 }
+
+.social_media{
+    z-index: 10;
+    height: 80px;
+    width: 80px;
+}
+.social_media:hover{
+    height: 100px;
+    width: 100px;
+
+}

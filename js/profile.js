@@ -26,11 +26,33 @@ function submitCheck() {
     testingPassowrd();
 }
 
+function loading() {
+    var block = "";
+    for(i=1; i<32; i++){
+        block+='<option value='+'\"'+i+'\">'+i+'</option>';
+        //alert(block);
+    }
+    document.getElementById("profile_day").innerHTML=block;
 
+    block="";
+    for(i=1; i<13; i++){
+        block+='<option value='+'\"'+i+'\">'+i+'</option>';
+        //alert(block);
+    }
+    document.getElementById("profile_mon").innerHTML=block;
+
+    block="";
+    for(i=1970; i<2017; i++){
+        block+='<option value='+'\"'+i+'\">'+i+'</option>';
+        //alert(block);
+    }
+    document.getElementById("profile_year").innerHTML=block;
+
+}
 $(document).ready(function() {
 
+    loading();
     var email1 = sessionStorage.getItem("user_email_login");
-
     $.post("php/profile.php", {
 
         email: email1

@@ -63,7 +63,7 @@
                     <a href="#">Profile</a>
                 </li>
                 <li>
-                    <a href="#">Sign out</a>
+                    <a href="login.html" onclick="signMeOut()">Sign out</a>
                 </li>
             </ul>
         </div>
@@ -83,6 +83,12 @@
                 <img src="img/dummy.png" class="avatar img-circle img-thumbnail profile_picture" alt="avatar">
                 <h6>Upload a different photo...</h6>
                 <input type="file" class="text-center center-block well well-sm">
+            </div>
+            <div class="row" align="center">
+
+                <img src="img/dummy.png" class="img-circle social_media">
+                <img src="img/dummy.png" class="img-circle social_media">
+                <img src="img/dummy.png" class="img-circle social_media">
             </div>
         </div>
 
@@ -139,6 +145,47 @@
                     <label class="col-lg-3 control-label">Blood Group:</label>
                     <div class="col-lg-8">
                         <select class="form-control" id="profile_blood_group">
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 col-md-3 col-xs-3 col-sm-3 control-label">Birthday:</label>
+                    <div class="col-lg-2 col-md-2 col-xs-3 col-sm-3">
+                        <select class="form-control" id="profile_day">
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-xs-3 col-sm-3">
+                        <select class="form-control" id="profile_mon">
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-xs-3 col-sm-3">
+                        <select class="form-control" id="profile_year">
                             <option value="O+">O+</option>
                             <option value="O-">O-</option>
                             <option value="A+">A+</option>
@@ -214,6 +261,8 @@
         </div>
     </div>
 
+
+
 </div>
 
 
@@ -223,7 +272,7 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/profile.js"></script>
-
+<script src="js/signout.js"></script>
 
 </body>
 
