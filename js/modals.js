@@ -2,23 +2,22 @@
  * Created by anando on 4/27/17.
  */
 function forgetPasswordCancel() {
-    document.getElementById("forgetPassword").style.display='none';
+    $('#forgot-modal').modal('hide');
 }
 
 function forgetPasswordSubmit() {
-    document.getElementById("forgetEmailSubmission").innerHTML="<p class='h1' align='center'>Please Check your Email.</p>";
-    document.getElementById("forgetPasswordSuccess").style.display='none';
-    document.getElementById("forgetPasswordC").value="Ok";
+    document.getElementById("forgetEmailSubmission").innerHTML="<p class='h5' align='center'>Password Sent.Please Check your Email.</p><input id='forget_pass_submit' type='submit' name='login' class='login loginmodal-submit' value='DONE' onclick='forgetPasswordCancel()'>";
+
 }
 
 function logInForgetPassword() {
-    //console.log("HERE I AM");
-    document.getElementById("loginModal").style.display='none';
-    document.getElementById("forgetPassword").style.display='block';
+    $('#login-modal').modal('hide');
+
 }
 
 function logInCancel() {
-    document.getElementById("loginModal").style.display='none';
+    $('#login-modal').modal('hide');
+    //document.getElementById("login-modal").style.display='none';
 }
 function logInSuccess() {
     logInCancel();
@@ -33,3 +32,5 @@ function reqSuccess() {
 function reqCancel() {
     document.getElementById("requestModal").style.display='none';
 }
+
+//http://bootsnipp.com/snippets/featured/clean-modal-login-form
