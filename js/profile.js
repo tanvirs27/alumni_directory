@@ -53,6 +53,21 @@ $(document).ready(function() {
 
     loading();
     var email1 = sessionStorage.getItem("user_email_login");
+
+    console.log("from js:: "+email1);
+
+
+    $.post("php/test.php", {
+
+        email: email1
+
+    }, function (data) {
+
+        console.log("from php:: "+data);
+
+
+    });
+
     $.post("php/profile.php", {
 
         email: email1
@@ -80,6 +95,43 @@ $(document).ready(function() {
 
     });
 });
+
+
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+
+        var data = new FormData();
+        data.append('imageToUpload', input.files[0]);
+
+        console.log("before ajax "+data);
+
+        $.ajax({
+            url: "php/upload-img.php",
+            type: "POST",
+            data: data,
+            processData: false,
+            contentType: false,
+            success: function (res) {
+                // document.getElementById("response").innerHTML = res;
+                console.log(res);
+            }
+        });
+
+        reader.onload = function (e) {
+            $('#featured_img').attr('src', e.target.result);
+
+
+        };
+
+        reader.readAsDataURL(input.files[0]);
+
+        //document.getElementById("img-form").submit();
+    }
+}
+
 
 
 
