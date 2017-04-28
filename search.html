@@ -95,7 +95,7 @@
                         <div class="dropdown dropdown-lg">
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
                             <div class="dropdown-menu dropdown-menu-right" role="menu">
-                                <form class="form-horizontal" role="form">
+                                <form class="form-horizontal" role="form" action="javascript:search_it();">
                                     <div class="form-group">
                                         <label for="email">Email:</label>
                                         <input class="form-control" type="email" id="email" name="email">
@@ -110,7 +110,7 @@
                                     <div class="form-group">
                                         <label for="blood">Blood Group:</label>
                                         <select class="form-control" id="blood" name="blood">
-                                            <option value="none">Select One</option>
+                                            <option value="">Any</option>
                                             <option value="O+">O+</option>
                                             <option value="O-">O-</option>
                                             <option value="A+">A+</option>
@@ -146,17 +146,16 @@
                                         <label for="hometown">Hometown:</label>
                                         <input class="form-control" type="text" id="hometown" name="hometown">
                                     </div>
-                                    <div class="btn btn-primary" id="submit_1" data-toggle="dropdown"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
+                                    <button type="submit" class="btn btn-primary" id="submit_1" data-toggle="dropdown"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
                                 </form>
                             </div>
                         </div>
-                        <div class="btn btn-primary" id="submit_2"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
+                        <button onclick="search_it()" class="btn btn-primary" id="submit_2"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 
 
