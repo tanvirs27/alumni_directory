@@ -6,6 +6,7 @@
     <link rel="shortcut icon" href="img/images.png">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="css/modals.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 <body>
@@ -19,9 +20,10 @@
                   class="close" title="Close Modal">&times;</span>
             <h1>Login to Your Account</h1><br>
 
-            <form>
-                <input type="email" name="email" placeholder="email@liame.com" required>
-                <input type="password" name="pass" placeholder="Password" required>
+            <form id="loginform">
+                <input type="email" id="loginusername" placeholder="email@liame.com" required>
+                <input type="password" id="loginpassword" placeholder="Password" required>
+                <div class="bg-danger" id="loginerror_message" align="center" style="padding-bottom: 5px;display: none"></div>
                 <input type="submit" name="login" class="login loginmodal-submit" value="Login">
             </form>
 
@@ -41,7 +43,7 @@
             <h1>Forgot Password</h1><br>
             <form id="forgetEmailSubmission">
                 <input type="email" name="email" placeholder="my@email.com" required>
-                <input id="forget_pass_submit" type="submit" name="login" class="login loginmodal-submit" value="Login" onclick="forgetPasswordSubmit()">
+                <input id="forget_pass_submit" type="submit" name="login" class="login loginmodal-submit" value="Send">
             </form>
         </div>
     </div>
@@ -50,13 +52,16 @@
 <div class="modal fade" id="request-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
         <div class="loginmodal-container">
-            <span onclick="$('#forgot-modal').modal('hide');"
+            <span onclick="$('#request-modal').modal('hide');"
                   class="close" title="Close Modal">&times;</span>
             <h1>Request Membership</h1><br>
-            <form>
-                <input type="text" name="text" placeholder="your name">
-                <input type="email" name="email" placeholder="your@email.com" required>
-                <input type="submit" name="login" class="login loginmodal-submit" value="Login" onclick="forgetPasswordSubmit()">
+            <form id="request_form">
+                <input type="text" id="reqname" placeholder="your name">
+                <input type="email" name="reqemail" placeholder="your@email.com" required="required">
+                <input type="password" name="reqpass" placeholder="your password" required="required">
+                <input type="password" name="reqconfpass" placeholder="confirm password" required="required">
+                <input type="text" name="reqbatch" placeholder="batch no (i.e. 20)" required="required">
+                <input type="submit" class="login loginmodal-submit" value="Request" >
             </form>
         </div>
     </div>
