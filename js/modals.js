@@ -108,9 +108,11 @@ function login_func() {
 
     if (name1 == '') {
         document.getElementById("loginerror_message").innerHTML = "Enter you email";
+        document.getElementById("loginerror_message").style.display = 'block';
     }
     else if (password == '') {
         document.getElementById("loginerror_message").innerHTML = "Enter you password";
+        document.getElementById("loginerror_message").style.display = 'block';
     }
     else {
 
