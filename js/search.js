@@ -3,6 +3,10 @@
  *	Email: rifat.csedu20@gmail.com
  *****/
 
+
+var ara;
+
+
 var select = document.getElementById("batch");
 var option = document.createElement("OPTION");
 select.options.add(option);
@@ -16,6 +20,34 @@ for(var i=1; i<=23; i++){
     option.text = i;
     option.value =""+i+"";
 }
+
+
+function showProfile(i) {
+
+
+    console.log(ara[i][0]);
+    $('#profileshow-modal').modal('show');
+
+    for(var j=0;j<=13;j++){
+        if(j==2){
+            continue;
+        }
+
+        var element= document.getElementById("profile"+j).value=ara[i][j];
+
+
+        if(!ara[i][j]){
+            console.log("no data available");
+            document.getElementById("profilediv"+j).style.display="none";
+        }else{
+            //element.style.display="hide";
+            element.value=ara[i][j];
+        }
+    }
+
+
+}
+
 
 function search_it() {
 
@@ -51,7 +83,7 @@ function search_it() {
             }
             */
 
-            var ara= JSON.parse(data);
+            ara= JSON.parse(data);
             //console.log(ara.size);
             var block="";
             var i;
@@ -67,6 +99,9 @@ function search_it() {
 
                 console.log(email+" "+name+" "+batch);
 
+                var temp="javascript:showProfile("+i+")";
+
+
                 block+='<div class="col-md-3">';
                 block+='<div class="block">';
                 block+='<div class="thumbnail">';
@@ -75,7 +110,9 @@ function search_it() {
                 block+='<h1>'+name+'</h1>';
                 block+='<p>Batch: '+batch+'</p>';
                 block+='<p>Email: '+email+'</p>';
-                block+='<a class="btn" href="#">more</a></div></div></div></div>';
+                //block+='<a class="btn" href="#" data-toggle="modal" data-target="#profileshow-modal">more</a></div></div></div></div>';
+
+                block+='<a class="btn" href="'+temp+'">more</a></div></div></div></div>';
 
                 if(i%4==3){
                     console.log("here 2");

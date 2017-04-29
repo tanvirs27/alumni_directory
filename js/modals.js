@@ -23,6 +23,15 @@ $(document).ready(function () {
         e.preventDefault();
         invitesend();
     });
+
+
+    var email=sessionStorage.getItem("user_email_login");
+
+    if(email==null){
+        not_logged_in();
+    }else{
+        logged_in();
+    }
 });
 
 
@@ -51,6 +60,24 @@ function invitesend() {
     var emailAdderss = $('#invitesendemail').val();
 }
 
+function logged_in() {
+    document.getElementById("bs-example-navbar-collapse-1").innerHTML="<ul class='nav navbar-nav navbar-right'>"+
+        "<li> <a href='search.html'>Search for Alumni</a> </li>"+
+        "<li id='invite_or_request'> <a  href='#' data-target='#invite-modal' data-toggle=\"modal\">Invite Others</a> </li>"+
+        "<li id=\"login_or_signout\"> <a href=\"javascript:signMeOut()\" >Sign Out</a> </li> </ul>";
+
+
+    document.getElementById("dashboard-login").innerHTML="<a href=\"search.html\" class=\"bnt bnt-theme login-links\">SEARCH FOR ALUMNI NOW</a>";
+}
+
+function not_logged_in() {
+    document.getElementById("bs-example-navbar-collapse-1").innerHTML="<ul class='nav navbar-nav navbar-right'>"+
+        "<li id='invite_or_request'> <a  href='#' data-target='#request-modal' data-toggle=\"modal\">Request Membership</a> </li>"+
+        "<li id=\"login_or_signout\"> <a href=\"#\" data-toggle=\"modal\" data-target=\"#login-modal\">Login</a> </li> </ul>";
+}
+
+
+
 function reqSuccess() {
     //document.getElementById("requestModal").innerHTML="<p class='h3'>Request Send. Please Wait till admin confirm.</p>"
     //document.getElementById("reqSend").style.display='none';
@@ -63,14 +90,10 @@ function reqCancel() {
     $('#request-modal').modal('hide');
 }
 
-/*$('#loginform').submit(function (e) {
-    //e.preventDefault();
-    login_func();
-})*/
 
 function signMeOut() {
     sessionStorage.removeItem("user_email_login");
-
+    not_logged_in();
 }
 
 function morefirst() {
@@ -91,11 +114,9 @@ function moresec() {
     $('#linkeddiv').style.display='block';
 }
 
-function login_done() {
-    alert("hi");
-    $('#login_or_signout').innerHTML="<a href='index.html' onclick='signMeOut()'>Sign Out</a>"
-    logInCancel();
-}
+
+
+
 function login_func() {
 
     //$('#login-modal').style.display='block';
@@ -132,17 +153,15 @@ function login_func() {
                 //document.getElementById("error_message").innerHTML = data;
                 console.log("logged in");
 
-
-                document.getElementById("bs-example-navbar-collapse-1").innerHTML="<ul class='nav navbar-nav navbar-right'>"+
-                    "<li> <a href='search.html'>Search for Alumni</a> </li>"+
-                    "<li id='invite_or_request'> <a  href='#' data-target='#invite-modal' data-toggle=\"modal\">Invite Others</a> </li>"+
-                    "<li id=\"login_or_signout\"> <a href=\"#\" data-toggle=\"modal\" data-target=\"#login-modal\">Sign Out</a> </li> </ul>";
+                logged_in();
 
                 logInCancel();
 
             }
             else {
+                document.getElementById("loginerror_message").style.display="block"
                 document.getElementById("loginerror_message").innerHTML = data;
+                console.log(data);
             }
         });
 

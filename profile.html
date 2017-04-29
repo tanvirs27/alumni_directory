@@ -19,6 +19,8 @@
     <link href="css/search.css" rel="stylesheet">
     <link href="css/profiledesign.css" rel="stylesheet">
 
+    <link href="lib/pnotify/dist/pnotify.css" rel="stylesheet">
+
     <!-- Custom CSS -->
 
     <style>
@@ -80,9 +82,12 @@
         <!-- left column -->
         <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="text-center">
-                <img src="img/dummy.png" class="avatar img-circle img-thumbnail profile_picture" alt="avatar">
+                <img id="avatar" src="img/dummy.png" class="avatar img-circle img-thumbnail profile_picture" alt="avatar">
                 <h6>Upload a different photo...</h6>
-                <input type="file" class="text-center center-block well well-sm">
+                <form enctype="multipart/form-data">
+
+                    <input type="file" id="imageToUpload" onchange="javascript:uploadImage(this);" class="text-center center-block well well-sm" accept=".jpg,.jpeg,.png,.gif,.bmp,.tiff">
+                </form>
             </div>
             <div class="row" align="center">
 
@@ -273,6 +278,10 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/profile.js"></script>
 <script src="js/signout.js"></script>
+
+<!-- PNotify -->
+<script src="lib/pnotify/dist/pnotify.js"></script>
+
 
 </body>
 

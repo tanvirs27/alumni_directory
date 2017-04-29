@@ -93,18 +93,31 @@ $(document).ready(function() {
         //document.getElementById("profile_email").value = ara[0][0];
         //document.getElementById("profile_email").value = ara[0][0];
 
+
+        if(ara[0][14].length>0)
+            $("#avatar").attr('src', "../"+ara[0][14]);
+        else
+            $("#avatar").attr('src', 'img/dummy.png');
+
+
     });
 });
 
 
 
-function readURL(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
+function uploadImage(input) {
 
+    console.log("upload image called");
+
+    if (input.files && input.files[0]) {
+
+        $("#avatar").attr('src', 'img/loading_spinner.gif');
+
+        var email=sessionStorage.getItem("user_email_login");
 
         var data = new FormData();
         data.append('imageToUpload', input.files[0]);
+        data.append('user', email);
 
         console.log("before ajax "+data);
 
@@ -117,18 +130,36 @@ function readURL(input) {
             success: function (res) {
                 // document.getElementById("response").innerHTML = res;
                 console.log(res);
+
+                if(res.indexOf("ERR")==-1) {
+                    new PNotify({
+                        title: 'Success',
+                        text: "Avatar updated!",
+                        type: 'success',
+                        styling: 'bootstrap3'
+                    });
+
+                    var splits = res.split("###");
+                    console.log(splits);
+                    res = splits[1];
+
+                    if(res.length>0)
+                        $("#avatar").attr('src', "../"+res);
+                    else
+                        $("#avatar").attr('src', 'img/dummy.png');
+
+                }
+                else {
+                    new PNotify({
+                        title: 'Error :(',
+                        text: "Something went wrong",
+                        type: 'error',
+                        styling: 'bootstrap3'
+                    });
+                }
             }
         });
 
-        reader.onload = function (e) {
-            $('#featured_img').attr('src', e.target.result);
-
-
-        };
-
-        reader.readAsDataURL(input.files[0]);
-
-        //document.getElementById("img-form").submit();
     }
 }
 

@@ -15,8 +15,9 @@
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
 
-    <link href="css/search.css" rel="stylesheet">
     <link rel="stylesheet" href="css/modals.css">
+    <link href="css/search.css" rel="stylesheet">
+
 
     <!-- Custom CSS -->
 
@@ -31,7 +32,8 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
 </head>
@@ -181,67 +183,64 @@
             </div>
             <img align="center" src="img/dummy.png" class="img-thumbnail img-circle" style="position: relative;margin-left:30%;margin-top:10px;margin-bottom: 10px; width: 100px; height: 100px;">
             <form id="profileshow_form" style="align-content: center">
-                <div class="form-group" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
-                    <label for="profilename" class="control-label">Name:</label>
-                    <input class="form-control" type="text" id="profilename" placeholder="your name" readonly="readonly" value="username">
+
+                <div id="profilediv1" class="form-group" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                    <label for="profile1" class="control-label">Name:</label>
+                    <input class="form-control" type="text" id="profile1" placeholder="your name" readonly="readonly" value="username">
                 </div>
-                <div class="form-group" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
-                    <label for="profilemail" class="control-label">Email:</label>
-                    <input class="form-control" type="text" id="profilemail" placeholder="your name" readonly="readonly" value="username@abc.com">
+
+                <div id="profilediv0" class="form-group" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                    <label for="profile0" class="control-label">Email:</label>
+                    <input class="form-control" type="text" id="profile0" placeholder="your name" readonly="readonly" value="username@abc.com">
                 </div>
-                <div class="form-group" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
-                    <label for="profilebatch" class="control-label">Batch:</label>
-                    <input class="form-control" type="text" id="profilebatch" placeholder="your name" readonly="readonly" value="20">
+
+                <div id="profilediv3" class="form-group" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                    <label for="profile3" class="control-label">Batch:</label>
+                    <input class="form-control" type="text" id="profile3" placeholder="your name" readonly="readonly" value="20">
                 </div>
-                <div class="form-group" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
-                    <label for="profilenumber" class="control-label">Contact No.:</label>
-                    <input class="form-control" type="text" id="profilenumber" placeholder="your name" readonly="readonly" value="+8801xxxxxxxxx">
+
+                <div id="profilediv5" class="form-group" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                    <label for="profile5" class="control-label">Contact No.:</label>
+                    <input class="form-control" type="text" id="profile5" placeholder="your name" readonly="readonly" value="+8801xxxxxxxxx">
                 </div>
-                <!--<div class="row" id="firstmore">
-                    <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
-                        <p class="btn btn-adn" onclick="morefirst()">More</p>
-                    </div>
-                </div>-->
-                <div id="dobdiv" class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
-                    <label for="profileDOB" class="control-label">Date of Birth:</label>
-                    <input class="form-control" type="text" id="profileDOB" placeholder="your name" readonly="readonly" value="12/05/1990">
+
+                <div id="profilediv4" class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                    <label for="profile4" class="control-label">Date of Birth:</label>
+                    <input class="form-control" type="text" id="profile4" placeholder="your name" readonly="readonly" value="12/05/1990">
                 </div>
-                <div id="blooddiv" class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
-                    <label for="profileblood" class="control-label">Blood Group:</label>
-                    <input class="form-control" type="text" id="profileblood" placeholder="your name" readonly="readonly" value="O +ve">
+                <div id="profilediv6" class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                    <label for="profile6" class="control-label">Blood Group:</label>
+                    <input class="form-control" type="text" id="profile6" placeholder="your name" readonly="readonly" value="O +ve">
                 </div>
-                <div id="homediv" class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
-                    <label for="profilehometown" class="control-label">Home Town:</label>
-                    <input class="form-control" type="text" id="profilehometown" placeholder="your name" readonly="readonly" value="Bogra">
+                <div id="profilediv7" class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                    <label for="profile7" class="control-label">Home Town:</label>
+                    <input class="form-control" type="text" id="profile7" placeholder="your name" readonly="readonly" value="Bogra">
                 </div>
-                <div id="resadddiv" class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
-                    <label for="profileresidingA" class="control-label">Residing Address:</label>
-                    <input class="form-control" type="text" id="profileresidingA" placeholder="your name" readonly="readonly" value="Dhaka">
+                <div id="profilediv8" class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                    <label for="profile8" class="control-label">Residing Address:</label>
+                    <input class="form-control" type="text" id="profile8" placeholder="your name" readonly="readonly" value="Dhaka">
                 </div>
-                <div id="resstatediv" class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
-                    <label for="profileresidingS" class="control-label">Residing State:</label>
-                    <input class="form-control" type="text" id="profileresidingS" placeholder="your name" readonly="readonly" value="Dhaka">
+                <div id="profilediv9" class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                    <label for="profile9" class="control-label">Residing State:</label>
+                    <input class="form-control" type="text" id="profile9" placeholder="your name" readonly="readonly" value="Dhaka">
                 </div>
-                <div id="rescondiv" class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
-                    <label for="profileresidingC" class="control-label">Residing Country:</label>
-                    <input class="form-control" type="text" id="profileresidingC" placeholder="your name" readonly="readonly" value="Dhaka">
+
+                <div id="profilediv10" class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                    <label for="profile10" class="control-label">Residing Country:</label>
+                    <input class="form-control" type="text" id="profile10" placeholder="your name" readonly="readonly" value="Dhaka">
                 </div>
-                <!--<div class="row makemeout" id="secmore" onclick="moresec();return false;">
-                    <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
-                        <p class="btn btn-adn">More</p>
-                    </div>
-                </div>-->
-                <div id="curworkdiv" class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
-                    <label for="profileworkingplace" class="control-label">Current Working Place:</label>
-                    <input class="form-control" type="text" id="profileworkingplace" placeholder="your name" readonly="readonly" value="Dhaka">
+
+                <div id="profilediv11" class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                    <label for="profile11" class="control-label">Current Working Place:</label>
+                    <input class="form-control" type="text" id="profile11" placeholder="your name" readonly="readonly" value="Dhaka">
                 </div>
-                <div id="fblinkdiv" class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
-                    <label for="profilefacebook" class="control-label">Facebook Link:</label>
-                    <input class="form-control" type="text" id="profilefacebook" placeholder="your name" readonly="readonly" value="Dhaka">
+                <div id="profilediv12" class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                    <label for="profile12" class="control-label">Facebook Link:</label>
+                    <input class="form-control" type="text" id="profile12" placeholder="your name" readonly="readonly" value="Dhaka">
                 </div>
-                <div id="linkeddiv" class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
-                    <label for="profilelinked" class="control-label">Linked In:</label>
-                    <input class="form-control" type="text" id="profilelinked" placeholder="your name" readonly="readonly" value="Dhaka">
+                <div id="profilediv13" class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                    <label for="profile13" class="control-label">Linked In:</label>
+                    <input class="form-control" type="text" id="profile13" placeholder="your name" readonly="readonly" value="Dhaka">
                 </div>
             </form>
             <div class="modal-footer">
@@ -261,9 +260,7 @@
 <script src="js/bootstrap.min.js"></script>
 
 <script type="text/javascript" src="js/search.js"></script>
-<script src="js/modals.js"></script>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
 
 </body>
 
