@@ -73,6 +73,24 @@ function signMeOut() {
 
 }
 
+function morefirst() {
+    $('#firstmore').style.display='hide';
+    $('#dobdiv').style.display='block';
+    $('#blooddiv').style.display='block';
+    $('#homediv').style.display='block';
+    $('#resadddiv').style.display='block';
+    $('#rescondiv').style.display='block';
+    $('#resstatediv').style.display='block';
+    $('#secmore').style.display='block';
+}
+
+function moresec() {
+    $('#secmore').style.display='hide';
+    $('#curworkdiv').style.display='block';
+    $('#fblinkdiv').style.display='block';
+    $('#linkeddiv').style.display='block';
+}
+
 function login_done() {
     alert("hi");
     $('#login_or_signout').innerHTML="<a href='index.html' onclick='signMeOut()'>Sign Out</a>"
