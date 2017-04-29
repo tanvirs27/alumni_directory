@@ -121,29 +121,30 @@ function login_func() {
 
         }, function (data) {
 
-            //alert(data);
-            /*$("#returnmessage").html("");
-             $("#returnmessage").append(data);
 
-             if(data.includes("Thank you for your valuable feedback")){
-             $("#form")[0].reset();
-             }
-             */
             if (data.includes("1")) {
                 //REDIRECT
                 sessionStorage.setItem("user_email_login",name1);
-                $('#login_or_signout').innerHTML="<a href='index.html' onclick='signMeOut()'>Sign Out</a>"
+               // $('#login_or_signout').innerHTML="<a href='index.html' onclick='signMeOut()'>Sign Out</a>";
                 //window.location.href = "search.html";
                 //document.getElementById("error_message").innerHTML = data;
+                console.log("logged in");
+
+
+                document.getElementById("bs-example-navbar-collapse-1").innerHTML="<ul class='nav navbar-nav navbar-right'>"+
+                    "<li> <a href='search.html'>Search for Alumni</a> </li>"+
+                    "<li id='invite_or_request'> <a  href='#' data-target='#invite-modal' data-toggle=\"modal\">Invite Others</a> </li>"+
+                    "<li id=\"login_or_signout\"> <a href=\"#\" data-toggle=\"modal\" data-target=\"#login-modal\">Sign Out</a> </li> </ul>";
+
+                logInCancel();
 
             }
             else {
-                document.getElementById("error_message").innerHTML = data;
+                document.getElementById("loginerror_message").innerHTML = data;
             }
         });
 
     }
-    logInCancel();
 
 
 }
