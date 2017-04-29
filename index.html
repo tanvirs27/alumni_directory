@@ -24,19 +24,23 @@
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="css/meanmenu.css" />
     <link href="css/search.css" rel="stylesheet">
-    <script src="js/modernizr.custom.js"></script>
+
+    <link rel="stylesheet" href="css/modals.css">
+    <link rel="stylesheet" href="css/bootstrap-social.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
+    <!--<script src="js/modernizr.custom.js"></script>
+    <script src="js/modals.js"></script>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
 </head>
 
-<body>
+<body lang="en">
 
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -57,11 +61,11 @@
                 <li>
                     <a href="search.html">Search for Alumni</a>
                 </li>
-                <li>
-                    <a href="#">Request Membership</a>
+                <li id="invite_or_request">
+                    <a  href="#" data-target="#request-modal" data-toggle="modal">Request Membership</a>
                 </li>
-                <li>
-                    <a href="#">Login</a>
+                <li id="login_or_signout">
+                    <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
                 </li>
             </ul>
         </div>
@@ -70,6 +74,73 @@
     <!-- /.container -->
 </nav>
 
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
+            <span onclick="$('#login-modal').modal('hide');"
+                  class="close" title="Close Modal">&times;</span>
+            <h1>Login to Your Account</h1><br>
+
+            <form id="loginform">
+                <input type="email" id="loginusername" placeholder="email@liame.com" required>
+                <input type="password" id="loginpassword" placeholder="Password" required>
+                <div class="bg-danger" id="loginerror_message" align="center" style="padding-bottom: 5px;display: none"></div>
+                <input type="button" id="linkedin" class="btn-linkedin login loginmodal-submit" value="Login With Linked In">
+                <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+            </form>
+
+            <div class="login-help">
+                <a data-target="#forgot-modal" data-toggle="modal" href="#" onclick="logInForgetPassword()">Forgot Password</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="forgot-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
+            <span onclick="$('#forgot-modal').modal('hide');"
+                  class="close" title="Close Modal">&times;</span>
+            <h1>Forgot Password</h1><br>
+            <form id="forgetEmailSubmission">
+                <input type="email" name="email" placeholder="my@email.com" required>
+                <input id="forget_pass_submit" type="submit" name="login" class="login loginmodal-submit" value="Send">
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="invite-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
+            <span onclick="$('#forgot-modal').modal('hide');"
+                  class="close" title="Close Modal">&times;</span>
+            <h1>Forgot Password</h1><br>
+            <form id="invitationSubmission">
+                <input id="invitesendemail" type="email" name="email" placeholder="invite@email.com" required>
+                <input id="ivitationsubmit" type="submit" name="login" class="login loginmodal-submit" value="Send">
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="request-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
+            <span onclick="$('#request-modal').modal('hide');"
+                  class="close" title="Close Modal">&times;</span>
+            <h1>Request Membership</h1><br>
+            <form id="request_form">
+                <input type="text" id="reqname" placeholder="your name">
+                <input type="email" name="reqemail" placeholder="your@email.com" required="required">
+                <input type="password" name="reqpass" placeholder="your password" required="required">
+                <input type="password" name="reqconfpass" placeholder="confirm password" required="required">
+                <input type="text" name="reqbatch" placeholder="batch no (i.e. 20)" required="required">
+                <input type="submit" class="login loginmodal-submit" value="Request" >
+            </form>
+        </div>
+    </div>
+</div>
 
 
 <div class="main-wrapper">
@@ -516,7 +587,7 @@
 
 </footer>
 
-
+<script src="js/bootstrap.js"></script>
 <!-- jQuery Version 1.11.1 -->
 <script src="js/jquery.js"></script>
 
@@ -525,11 +596,15 @@
 
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/jquery.meanmenu.js"></script>
-<script src="js/jquery.meanmenu.js"></script>
 <script src="js/jquery.syotimer.js"></script>
 <script src="js/parallax.min.js"></script>
 <script src="js/jquery.waypoints.min.js"></script>
 <script src="js/index.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<script src="js/modals.js"></script>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
 
 </body>
 
