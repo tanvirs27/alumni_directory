@@ -8,11 +8,13 @@
     <link rel="shortcut icon" href="img/images.png">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="css/modals.css">
+    <link rel="stylesheet" href="css/bootstrap-social.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 <body>
 
-<a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+<a href="#" data-toggle="modal" data-target="#profileshow-modal">Login</a>
 
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
@@ -21,10 +23,12 @@
                   class="close" title="Close Modal">&times;</span>
             <h1>Login to Your Account</h1><br>
 
-            <form>
-                <input type="email" name="email" placeholder="email@liame.com" required>
-                <input type="password" name="pass" placeholder="Password" required>
+            <form id="loginform">
+                <input type="email" id="loginusername" placeholder="email@liame.com" required>
+                <input type="password" id="loginpassword" placeholder="Password" required>
+                <div class="bg-danger" id="loginerror_message" align="center" style="padding-bottom: 5px;display: none"></div>
                 <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+                <input type="button" id="linkedin" class="btn-linkedin login loginmodal-submit" value="Login With Linked In">
             </form>
 
             <div class="login-help">
@@ -43,7 +47,7 @@
             <h1>Forgot Password</h1><br>
             <form id="forgetEmailSubmission">
                 <input type="email" name="email" placeholder="my@email.com" required>
-                <input id="forget_pass_submit" type="submit" name="login" class="login loginmodal-submit" value="Login" onclick="forgetPasswordSubmit()">
+                <input id="forget_pass_submit" type="submit" name="login" class="login loginmodal-submit" value="Send">
             </form>
         </div>
     </div>
@@ -52,14 +56,152 @@
 <div class="modal fade" id="request-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
         <div class="loginmodal-container">
-            <span onclick="$('#forgot-modal').modal('hide');"
+            <span onclick="$('#request-modal').modal('hide');"
                   class="close" title="Close Modal">&times;</span>
             <h1>Request Membership</h1><br>
-            <form>
-                <input type="text" name="text" placeholder="your name">
-                <input type="email" name="email" placeholder="your@email.com" required>
-                <input type="submit" name="login" class="login loginmodal-submit" value="Login" onclick="forgetPasswordSubmit()">
+            <form id="request_form">
+                <input type="text" id="reqname" placeholder="your name">
+                <input type="email" name="reqemail" placeholder="your@email.com" required="required">
+                <input type="password" name="reqpass" placeholder="your password" required="required">
+                <input type="password" name="reqconfpass" placeholder="confirm password" required="required">
+                <input type="text" name="reqbatch" placeholder="batch no (i.e. 20)" required="required">
+                <input type="submit" class="login loginmodal-submit" value="Request" >
             </form>
+        </div>
+    </div>
+</div>
+
+<!--
+<div class="modal fade" id="profileshow-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
+            <div class="modal-header">
+                <span onclick="$('#profileshow-modal').modal('hide');"
+                      class="close" title="Close Modal">&times;</span>
+                <p class="h3">Profile</p>
+            </div>
+            <section  style="margin-top: 10px">
+                <div class="row">
+                    <div id="firstpage" class="mymodalchangeanimate">
+                        <form id="profileshow_form">
+                            <div class="form-group" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                                <label for="profilename" class="control-label">Name:</label>
+                                <input class="form-control" type="text" id="profilename" placeholder="your name" readonly="readonly" value="username">
+                            </div>
+                            <div class="form-inline">
+                                <div style="margin-top: 5px; margin-bottom: 5px">
+                                   <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1"></div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                        <button class="form-control btn btn-linkedin" disabled="disabled">Previous</button>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4"></div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                        <button href="#secondpage" class="btn btn-facebook form-control">Forward</button>
+                                    </div>
+                                    <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="secondpage" class="mymodalchangeanimate" style="display: none">
+                        <form>
+                            <div class="form-inline">
+                                <div style="margin-top: 5px; margin-bottom: 5px">
+                                    <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1"></div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                        <button href="#firstpage" class="form-control btn btn-linkedin">Previous</button>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4"></div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                        <button href="#secondpage" class="btn btn-facebook form-control">Forward</button>
+                                    </div>
+                                    <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <div class="modal-footer">
+                <button class="btn btn-success">GOT IT!!!</button>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+
+<div class="modal fade" id="profileshow-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
+            <div class="modal-header">
+                <span onclick="$('#profileshow-modal').modal('hide');"
+                      class="close" title="Close Modal">&times;</span>
+                <p class="h3">Profile</p>
+            </div>
+            <img align="center" src="img/dummy.png" class="img-thumbnail img-circle" style="position: relative;margin-left:30%;margin-top:10px;margin-bottom: 10px; width: 100px; height: 100px;">
+            <form id="profileshow_form" style="align-content: center">
+                <div class="form-group" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                    <label for="profilename" class="control-label">Name:</label>
+                    <input class="form-control" type="text" id="profilename" placeholder="your name" readonly="readonly" value="username">
+                </div>
+                <div class="form-group" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                    <label for="profilemail" class="control-label">Email:</label>
+                    <input class="form-control" type="text" id="profilemail" placeholder="your name" readonly="readonly" value="username@abc.com">
+                </div>
+                <div class="form-group" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                    <label for="profilebatch" class="control-label">Batch:</label>
+                    <input class="form-control" type="text" id="profilebatch" placeholder="your name" readonly="readonly" value="20">
+                </div>
+                <div class="form-group" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                    <label for="profilenumber" class="control-label">Contact No.:</label>
+                    <input class="form-control" type="text" id="profilenumber" placeholder="your name" readonly="readonly" value="+8801xxxxxxxxx">
+                </div>
+                <div class="row">
+                    <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
+                        <button class="btn btn-adn">More</button>
+                    </div>
+                </div>
+                <div class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                    <label for="profileDOB" class="control-label">Date of Birth:</label>
+                    <input class="form-control" type="text" id="profileDOB" placeholder="your name" readonly="readonly" value="12/05/1990">
+                </div>
+                <div class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                    <label for="profileblood" class="control-label">Blood Group:</label>
+                    <input class="form-control" type="text" id="profileblood" placeholder="your name" readonly="readonly" value="O +ve">
+                </div>
+                <div class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                    <label for="profilehometown" class="control-label">Home Town:</label>
+                    <input class="form-control" type="text" id="profilehometown" placeholder="your name" readonly="readonly" value="Bogra">
+                </div>
+                <div class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                    <label for="profileresidingA" class="control-label">Residing Address:</label>
+                    <input class="form-control" type="text" id="profileresidingA" placeholder="your name" readonly="readonly" value="Dhaka">
+                </div>
+                <div class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                    <label for="profileresidingS" class="control-label">Residing State:</label>
+                    <input class="form-control" type="text" id="profileresidingS" placeholder="your name" readonly="readonly" value="Dhaka">
+                </div>
+                <div class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                    <label for="profileresidingC" class="control-label">Residing Country:</label>
+                    <input class="form-control" type="text" id="profileresidingC" placeholder="your name" readonly="readonly" value="Dhaka">
+                </div>
+                <div class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                    <label for="profileworkingplace" class="control-label">Current Working Place:</label>
+                    <input class="form-control" type="text" id="profileworkingplace" placeholder="your name" readonly="readonly" value="Dhaka">
+                </div>
+                <div class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                    <label for="profilefacebook" class="control-label">Facebook Link:</label>
+                    <input class="form-control" type="text" id="profilefacebook" placeholder="your name" readonly="readonly" value="Dhaka">
+                </div>
+                <div class="form-group makemeout" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                    <label for="profilelinked" class="control-label">Linked In:</label>
+                    <input class="form-control" type="text" id="profilelinked" placeholder="your name" readonly="readonly" value="Dhaka">
+                </div>
+            </form>
+            <div class="modal-footer">
+                <button onclick="$('#profileshow-modal').modal('hide');" class="btn btn-success">GOT IT!!!</button>
+            </div>
         </div>
     </div>
 </div>
