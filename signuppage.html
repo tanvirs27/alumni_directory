@@ -4,53 +4,73 @@
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CSEDU Singup</title>
+    <title>CSEDU Alumni Signup</title>
     <link rel="shortcut icon" href="img/images.png">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap-social.css">
+    <link href="lib/nprogress/nprogress.css" rel="stylesheet">
+    <link href="lib/pnotify/dist/pnotify.css" rel="stylesheet">
+
+
+	<script type="text/javascript" src="http://platform.linkedin.com/in.js">
+        api_key: 81t2pllbr8lep1
+        onLoad: OnLinkedInFrameworkLoad
+        authorize: false
+	</script>
 </head>
 
 <body lang="en">
+
 	<div class="container-fluid">
-    <section class="container">
+    <form class="container" data-parsley-validate action="javascript:registerClick();">
 		<div class="container-page">				
-			<div class="col-md-6">
+			<div class="col-md-6" >
 				<h3 class="dark-grey">Registration</h3>
-				
+				<div class="alert-info" align="center" id="signupwarning" style="display: none">
+					<span class="close" onclick="this.parentElement.style.display='none';">&times;</span>
+					<p class="h3" id="warningmessage">WARN</p>
+				</div>
 				<div class="form-group col-lg-12">
 					<label>Name:</label>
-					<input type="" name="" class="form-control" id="" value="">
+					<input data-parsley-type="text" name="" class="form-control" id="signupname" value="" data-parsley-required="true">
 				</div>
 				
-				<div class="form-group col-lg-6">
+				<div id="pass-div" class="form-group col-lg-6">
 					<label>Password</label>
-					<input type="password" name="" class="form-control" id="" value="">
+					<input type="password" name="" class="form-control" id="signuppassword" value="">
 				</div>
 				
-				<div class="form-group col-lg-6">
+				<div id="conf-pass-div" class="form-group col-lg-6">
 					<label>Repeat Password</label>
-					<input type="password" name="" class="form-control" id="" value="">
+					<input type="password" name="" class="form-control" id="signupconfpassword" value="">
 				</div>
 								
 				<div class="form-group col-lg-6">
 					<label>Email Address</label>
-					<input type="email" name="" class="form-control" id="" value="">
+					<input data-parsley-type="email" name="" class="form-control" id="signupmail" value="">
 				</div>
 				
 				<div class="form-group col-lg-6">
 					<label>Repeat Email Address</label>
-					<input type="email" name="" class="form-control" id="" value="">
+					<input data-parsley-type="email" name="" class="form-control" id="signupconfmail" value="">
 				</div>
+
 				<div class="form-group col-lg-12">
 					<label>Batch</label>
-					<input type="number" name="" class="form-control" id="" value="">
+                    <select id="signupbatch" class="form-control">
+                    </select>
 				</div>
+
 				<div class="form-group col-lg-3"></div>
 				<div class="form-group col-lg-6">
-					<a class="btn btn-block btn-social btn-linkedin">
+				<!--	<a class="btn btn-block btn-social btn-linkedin">
     					<span class="fa fa-linkedin"><strong>in</strong></span> Sign in with LinkedIn
   					</a>
-				</div>		
+  				-->
+                    <script type="in/Login">
+                    </script>
+
+                </div>
 			
 			</div>
 		
@@ -60,23 +80,38 @@
 					By clicking on "Register" you agree to CSEDU's Terms and Conditions
 				</p>
 				<p>
-					This website is only for alumnis of CSEDU. If you are seeing this page that means anyone has sent you an invitation email. Before clicking the register button please read the terms and conditions given bellow:
+					This website is only for the alumni of CSEDU. If you are seeing this page that means anyone has sent you an invitation email. Before clicking the register button please read the terms and conditions given bellow:
 				</p>
 				<p>
-					Should there be an error in the description or pricing of a product, we will provide you with a full refund (Paragraph 13.5.6)
+					This website will reserve your personal information. Some of them are mandatory. Like your email , name , batch number.
 				</p>
 				<p>
-					Acceptance of an order by us is dependent on our suppliers ability to provide the product. (Paragraph 13.5.6)
+					If you share more of your personal information like phone number , address , working place then other people of this institution can see them too. So if you have any security concern then be careful before sharing any of your personal information.
+					Moreover, Our database will preserve this information.
 				</p>
-				
-				<button type="submit" class="btn btn-primary">Register</button>
+				<p>
+					Moderators will maintain the whole website. So if you provide any kind of false information or if they can identify you as a fake user then both you and your invitation sender may get banned.
+				</p>
+
+				<p>
+					All right reserves to CSEDU.
+				</p>
+
+				<input type="submit" class="btn btn-primary">Register</input>
 			</div>
 		</div>
-	</section>
+	</form>
 </div>
-<script src="js/bootstrap.js"></script>
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
+
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/signuppage.js"></script>
+    <script src="lib/parsleyjs/dist/parsley.min.js"></script>
+    <script src="lib/nprogress/nprogress.js"></script>
+    <script src="lib/pnotify/dist/pnotify.js"></script>
+
+
 
 </body>
 </html>

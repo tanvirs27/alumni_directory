@@ -41,14 +41,7 @@ function login_func() {
 
         }, function (data) {
 
-            //alert(data);
-            /*$("#returnmessage").html("");
-             $("#returnmessage").append(data);
 
-             if(data.includes("Thank you for your valuable feedback")){
-             $("#form")[0].reset();
-             }
-             */
             if (data.includes("1")) {
                 //REDIRECT
                 sessionStorage.setItem("user_email_login",name1);
