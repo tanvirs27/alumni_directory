@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa977bf3-e843-4d90-bde0-60545dfa6bbd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/signuppage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/modals.css" afterPath="$PROJECT_DIR$/css/modals.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/signuppage.html" afterPath="$PROJECT_DIR$/signuppage.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,11 +67,11 @@
       <file leaf-file-name="signuppage.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/signuppage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="75" column="36" lean-forward="false" selection-start-line="75" selection-start-column="36" selection-end-line="75" selection-end-column="36" />
+            <state relative-caret-position="285">
+              <caret line="19" column="94" lean-forward="false" selection-start-line="19" selection-start-column="94" selection-end-line="19" selection-end-column="94" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#750#757#0" expanded="true" />
+                <element signature="e#749#756#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -343,12 +340,12 @@
       <workItem from="1493475903492" duration="11086000" />
       <workItem from="1493491798054" duration="168000" />
       <workItem from="1493492125718" duration="409000" />
-      <workItem from="1493562326189" duration="4721000" />
+      <workItem from="1493562326189" duration="4798000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50836000" />
+    <option name="totallyTimeSpent" value="50913000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
@@ -747,11 +744,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/signuppage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="75" column="36" lean-forward="false" selection-start-line="75" selection-start-column="36" selection-end-line="75" selection-end-column="36" />
+        <state relative-caret-position="285">
+          <caret line="19" column="94" lean-forward="false" selection-start-line="19" selection-start-column="94" selection-end-line="19" selection-end-column="94" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#750#757#0" expanded="true" />
+            <element signature="e#749#756#0" expanded="true" />
           </folding>
         </state>
       </provider>
