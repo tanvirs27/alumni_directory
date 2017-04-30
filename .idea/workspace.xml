@@ -2,44 +2,134 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa977bf3-e843-4d90-bde0-60545dfa6bbd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/loading_spinner.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/pnotify/.bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/pnotify/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/pnotify/COPYING" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/pnotify/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/pnotify/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.animate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.brighttheme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.buttons.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.buttons.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.callbacks.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.confirm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.desktop.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.history.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.history.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.material.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.mobile.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.mobile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.nonblock.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.nonblock.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.reference.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.tooltip.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/pnotify/libtests/browserify/index.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/php/image-db.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/php/image-display.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/php/images.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/account-icon.png" afterPath="$PROJECT_DIR$/img/account-icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/boishakh.jpg" afterPath="$PROJECT_DIR$/img/boishakh.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/calendar-icon.jpg" afterPath="$PROJECT_DIR$/img/calendar-icon.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/company-logo1.png" afterPath="$PROJECT_DIR$/img/company-logo1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/company-logo2.png" afterPath="$PROJECT_DIR$/img/company-logo2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/company-logo3.png" afterPath="$PROJECT_DIR$/img/company-logo3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/company-logo4.png" afterPath="$PROJECT_DIR$/img/company-logo4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/csedu.jpg" afterPath="$PROJECT_DIR$/img/csedu.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/csedu.png" afterPath="$PROJECT_DIR$/img/csedu.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/dummy.png" afterPath="$PROJECT_DIR$/img/dummy.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/even-img.jpg" afterPath="$PROJECT_DIR$/img/even-img.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/event-map-icon.png" afterPath="$PROJECT_DIR$/img/event-map-icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/event-next.png" afterPath="$PROJECT_DIR$/img/event-next.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/event-prev.png" afterPath="$PROJECT_DIR$/img/event-prev.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/glyphicons-halflings-white.png" afterPath="$PROJECT_DIR$/img/glyphicons-halflings-white.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/glyphicons-halflings.png" afterPath="$PROJECT_DIR$/img/glyphicons-halflings.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/group-icon.png" afterPath="$PROJECT_DIR$/img/group-icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/header2.3.1-1.png" afterPath="$PROJECT_DIR$/img/header2.3.1-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/images.png" afterPath="$PROJECT_DIR$/img/images.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/img1.jpg" afterPath="$PROJECT_DIR$/img/img1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/img2.jpg" afterPath="$PROJECT_DIR$/img/img2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/img3.jpg" afterPath="$PROJECT_DIR$/img/img3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/img4.jpg" afterPath="$PROJECT_DIR$/img/img4.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/ln-button.jpg" afterPath="$PROJECT_DIR$/img/ln-button.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/loading_spinner.gif" afterPath="$PROJECT_DIR$/img/loading_spinner.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/logo_square.jpg" afterPath="$PROJECT_DIR$/img/logo_square.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/map-icon-while.png" afterPath="$PROJECT_DIR$/img/map-icon-while.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/map-icon.png" afterPath="$PROJECT_DIR$/img/map-icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/message-icon.png" afterPath="$PROJECT_DIR$/img/message-icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/new-img1.jpg" afterPath="$PROJECT_DIR$/img/new-img1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/new-img2.jpg" afterPath="$PROJECT_DIR$/img/new-img2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/new-img3.jpg" afterPath="$PROJECT_DIR$/img/new-img3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/new-img4.jpg" afterPath="$PROJECT_DIR$/img/new-img4.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/right_arrow.png" afterPath="$PROJECT_DIR$/img/right_arrow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/search-icon.png" afterPath="$PROJECT_DIR$/img/search-icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/slider1.jpg" afterPath="$PROJECT_DIR$/img/slider1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/slider2.jpg" afterPath="$PROJECT_DIR$/img/slider2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/slider3.jpg" afterPath="$PROJECT_DIR$/img/slider3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/star-icon.png" afterPath="$PROJECT_DIR$/img/star-icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/up_arrow.png" afterPath="$PROJECT_DIR$/img/up_arrow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uploads/18.png" afterPath="$PROJECT_DIR$/uploads/18.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uploads/19.png" afterPath="$PROJECT_DIR$/uploads/19.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/alumni_directory.iml" afterPath="$PROJECT_DIR$/.idea/alumni_directory.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modals.html" afterPath="$PROJECT_DIR$/Modals.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/animate.css" afterPath="$PROJECT_DIR$/css/animate.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap-responsive.css" afterPath="$PROJECT_DIR$/css/bootstrap-responsive.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap-responsive.min.css" afterPath="$PROJECT_DIR$/css/bootstrap-responsive.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap-social.css" afterPath="$PROJECT_DIR$/css/bootstrap-social.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap.css" afterPath="$PROJECT_DIR$/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/meanmenu.css" afterPath="$PROJECT_DIR$/css/meanmenu.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/modals.css" afterPath="$PROJECT_DIR$/css/modals.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/owl.carousel.css" afterPath="$PROJECT_DIR$/css/owl.carousel.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/profiledesign.css" afterPath="$PROJECT_DIR$/css/profiledesign.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/search.css" afterPath="$PROJECT_DIR$/css/search.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fonts/Montserrat-Bold.html" afterPath="$PROJECT_DIR$/fonts/Montserrat-Bold.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fonts/Montserrat-Light.html" afterPath="$PROJECT_DIR$/fonts/Montserrat-Light.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fonts/Montserrat-Regular.html" afterPath="$PROJECT_DIR$/fonts/Montserrat-Regular.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/bootstrap.js" afterPath="$PROJECT_DIR$/js/bootstrap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/js/bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/index.js" afterPath="$PROJECT_DIR$/js/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery.js" afterPath="$PROJECT_DIR$/js/jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery.meanmenu.js" afterPath="$PROJECT_DIR$/js/jquery.meanmenu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery.syotimer.js" afterPath="$PROJECT_DIR$/js/jquery.syotimer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery.waypoints.min.js" afterPath="$PROJECT_DIR$/js/jquery.waypoints.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/linkedin.js" afterPath="$PROJECT_DIR$/js/linkedin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/logInMenu.js" afterPath="$PROJECT_DIR$/js/logInMenu.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/modals.js" afterPath="$PROJECT_DIR$/js/modals.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/modernizr.custom.js" afterPath="$PROJECT_DIR$/js/modernizr.custom.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/owl.carousel.min.js" afterPath="$PROJECT_DIR$/js/owl.carousel.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/parallax.min.js" afterPath="$PROJECT_DIR$/js/parallax.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/profile.js" afterPath="$PROJECT_DIR$/js/profile.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/search.js" afterPath="$PROJECT_DIR$/js/search.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/signout.js" afterPath="$PROJECT_DIR$/js/signout.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/signup_main.js" afterPath="$PROJECT_DIR$/js/signup_main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pnotify/.bower.json" afterPath="$PROJECT_DIR$/lib/pnotify/.bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pnotify/.gitignore" afterPath="$PROJECT_DIR$/lib/pnotify/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pnotify/COPYING" afterPath="$PROJECT_DIR$/lib/pnotify/COPYING" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pnotify/README.md" afterPath="$PROJECT_DIR$/lib/pnotify/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pnotify/bower.json" afterPath="$PROJECT_DIR$/lib/pnotify/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.animate.js" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.animate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.brighttheme.css" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.brighttheme.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.buttons.css" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.buttons.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.buttons.js" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.buttons.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.callbacks.js" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.callbacks.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.confirm.js" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.confirm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.css" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.desktop.js" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.desktop.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.history.css" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.history.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.history.js" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.history.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.js" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.material.css" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.material.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.mobile.css" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.mobile.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.mobile.js" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.mobile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.nonblock.css" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.nonblock.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.nonblock.js" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.nonblock.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.reference.js" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.reference.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.tooltip.js" afterPath="$PROJECT_DIR$/lib/pnotify/dist/pnotify.tooltip.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pnotify/libtests/browserify/index.js" afterPath="$PROJECT_DIR$/lib/pnotify/libtests/browserify/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/linkedin" afterPath="$PROJECT_DIR$/linkedin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.html" afterPath="$PROJECT_DIR$/login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/connect.inc.php" afterPath="$PROJECT_DIR$/php/connect.inc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/create-table.php" afterPath="$PROJECT_DIR$/php/create-table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/invite-send.php" afterPath="$PROJECT_DIR$/php/invite-send.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/login.php" afterPath="$PROJECT_DIR$/php/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/profile.php" afterPath="$PROJECT_DIR$/php/profile.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/search.php" afterPath="$PROJECT_DIR$/php/search.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/test.php" afterPath="$PROJECT_DIR$/php/test.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/upload-img.php" afterPath="$PROJECT_DIR$/php/upload-img.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profile.html" afterPath="$PROJECT_DIR$/profile.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/search.html" afterPath="$PROJECT_DIR$/search.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/signup.html" afterPath="$PROJECT_DIR$/signup.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/signuppage.html" afterPath="$PROJECT_DIR$/signuppage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.html" afterPath="$PROJECT_DIR$/test.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -100,8 +190,8 @@
       <file leaf-file-name="profile.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/profile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="97" column="52" lean-forward="false" selection-start-line="97" selection-start-column="52" selection-end-line="97" selection-end-column="52" />
+            <state relative-caret-position="-1046">
+              <caret line="91" column="69" lean-forward="true" selection-start-line="91" selection-start-column="69" selection-end-line="91" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -393,7 +483,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46115000" />
+    <option name="totallyTimeSpent" value="46713000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="0" />
@@ -867,8 +957,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/profile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="97" column="52" lean-forward="false" selection-start-line="97" selection-start-column="52" selection-end-line="97" selection-end-column="52" />
+        <state relative-caret-position="-1046">
+          <caret line="91" column="69" lean-forward="true" selection-start-line="91" selection-start-column="69" selection-end-line="91" selection-end-column="69" />
           <folding />
         </state>
       </provider>
