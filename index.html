@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="css/modals.css">
     <link rel="stylesheet" href="css/bootstrap-social.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="lib/pnotify/dist/pnotify.css" rel="stylesheet">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -105,9 +106,9 @@
             <span onclick="$('#invite-modal').modal('hide');"
                   class="close" title="Close Modal">&times;</span>
             <h1>Invite CSEDU Alumni</h1><br>
-            <form id="invitationSubmission">
-                <input id="invitesendemail" type="email" name="email" placeholder="invite@email.com" required>
-                <input id="ivitationsubmit" type="submit" name="login" class="login loginmodal-submit" value="Send">
+            <form id="invite_form" action="javascript:invite();">
+                <input id="invite_email" type="email" name="email" placeholder="invite@email.com" required>
+                <input id="invite_submit" type="submit" name="login" class="login loginmodal-submit" value="Send">
             </form>
         </div>
     </div>
@@ -582,15 +583,17 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
-
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/jquery.meanmenu.js"></script>
 <script src="js/jquery.syotimer.js"></script>
 <script src="js/parallax.min.js"></script>
 <script src="js/jquery.waypoints.min.js"></script>
-<script src="js/index.js"></script>
 <script src="js/modernizr.custom.js"></script>
-<script src="js/modals.js"></script>
+<script src="js/home.js"></script>
+
+<!-- PNotify -->
+<script src="lib/pnotify/dist/pnotify.js"></script>
+
 
 
 </body>

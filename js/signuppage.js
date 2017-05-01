@@ -98,6 +98,9 @@ function registerClick() {
                     type: 'success',
                     styling: 'bootstrap3'
                 });
+
+                sessionStorage.setItem("user_email_login",email);
+                window.location.href = "index.html";
             }
             else {
                 new PNotify({

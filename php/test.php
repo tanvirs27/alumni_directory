@@ -10,4 +10,8 @@ session_start();
 
 //echo $_SESSION['user_email_login'];
 echo "hello";
-echo isset($_SESSION['user_email_login'])." ";
+//echo isset($_SESSION['user_email_login'])." ";
+
+require "send-mail.php";
+
+sendMailBySwift();

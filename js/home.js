@@ -1,6 +1,29 @@
 /**
  * Created by anando on 4/27/17.
  */
+
+
+(function ($) {
+    "use strict";
+
+    /*----------------------------
+     One Columns Slider
+     ------------------------------ */
+    $(".columns1").owlCarousel({
+        loop:true,
+        autoPlay: true,
+        items : 1,
+        margin:0,
+        singleItem: true,
+        autoPlaySpeed: 500,
+        autoplayTimeout:500
+    });
+
+
+})(jQuery);
+
+
+
 function forgetPasswordCancel() {
     $('#forgot-modal').modal('hide');
 }
@@ -175,5 +198,50 @@ function login_func() {
 
 
 }
+
+
+
+function invite() {
+    var invite_email= document.getElementById("invite_email").value;
+    var from_email= sessionStorage.getItem("user_email_login");
+
+    console.log("inside invite");
+
+    $.post("php/invite-send.php", {
+
+        invite_email: invite_email,
+        from: from_email
+
+    }, function (data) {
+
+        console.log(data);
+
+        if (data=="success") {
+
+            console.log("invite sent");
+
+            new PNotify({
+                title: 'Success',
+                text: "Invitation sent!",
+                type: 'success',
+                styling: 'bootstrap3'
+            });
+
+
+        }
+        else {
+            console.log("error: "+data);
+            new PNotify({
+                title: 'Error :(',
+                text: data,
+                type: 'error',
+                styling: 'bootstrap3'
+            });
+        }
+    });
+
+    $('#invite-modal').modal('hide');
+}
+
 
 //http://bootsnipp.com/snippets/featured/clean-modal-login-form
