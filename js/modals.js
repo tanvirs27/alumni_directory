@@ -23,6 +23,10 @@ $(document).ready(function () {
         e.preventDefault();
         invitesend();
     });
+    $('#firstmore').click(function () {
+        alert("clicked");
+        morefirst();
+    });
 
 
     var email=sessionStorage.getItem("user_email_login");
@@ -97,21 +101,23 @@ function signMeOut() {
 }
 
 function morefirst() {
-    $('#firstmore').style.display='hide';
-    $('#dobdiv').style.display='block';
-    $('#blooddiv').style.display='block';
-    $('#homediv').style.display='block';
-    $('#resadddiv').style.display='block';
-    $('#rescondiv').style.display='block';
-    $('#resstatediv').style.display='block';
-    $('#secmore').style.display='block';
+    //alert("hello");
+    //$('#firstmore').style.display='hide';
+    document.getElementById('dobdiv').style.display='block';
+    document.getElementById('blooddiv').style.display='block';
+    document.getElementById('homediv').style.display='block';
+    document.getElementById('resadddiv').style.display='block';
+    document.getElementById('rescondiv').style.display='block';
+    document.getElementById('resstatediv').style.display='block';
+    document.getElementById('secmore').style.display='block';
 }
 
 function moresec() {
-    $('#secmore').style.display='hide';
-    $('#curworkdiv').style.display='block';
-    $('#fblinkdiv').style.display='block';
-    $('#linkeddiv').style.display='block';
+    this.parentElement.style.display='hide';
+    //$('#secmore').style.display='hide';
+    document.getElementById('curworkdiv').style.display='block';
+    document.getElementById('fblinkdiv').style.display='block';
+    document.getElementById('linkeddiv').style.display='block';
 }
 
 
