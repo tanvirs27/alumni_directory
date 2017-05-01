@@ -307,10 +307,14 @@ function loadEvent() {
             block+='<span class="text-place">'+location+'</span>';
             block+='</div></div></div></div>';
         }
+        if(block == ""){
+            block='<p class="h3">No Event Available</p>';
+        }
         document.getElementById("eventList").innerHTML=block;
         console.log("from php:: "+data);
 
     });
+
 }
 
 function loadCareer() {
@@ -346,6 +350,9 @@ function loadCareer() {
             block+='<p>'+des+'</p>';
             block+='</div></div></div></div>';
         }
+        if(block == ""){
+            block='<p class="h3">No Career News Available</p>';
+        }
 
         document.getElementById("careerLog").innerHTML=block;
         console.log("From php::" +data);
@@ -377,6 +384,9 @@ function loadNews(){
             block+='<div class="post-excerpt">';
             block+='<p>'+des+'</p>';
             block+='</div></div></div></div>';
+        }
+        if(block == ""){
+            block='<p class="h3">No News Available</p>';
         }
         console.log("LOADNEWS"+block);
         document.getElementById("newFeed").innerHTML=block;
