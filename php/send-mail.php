@@ -8,7 +8,7 @@
 
 function sendMailBySwift($name,$email,$pass,$invite_email,$code)
 {
-    require_once '../lib/swiftmailer/lib/swift_required.php';
+    require_once '../lib/swiftmailer/swift_required.php';
 
 
 
