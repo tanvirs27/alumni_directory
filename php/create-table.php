@@ -34,4 +34,34 @@ if ($result==TRUE) {
 else {
     echo mysqli_error($connection);
 }
+
+$create_table_event = "CREATE TABLE event (mday INT , mon INT , yr INT , title VARCHAR (100) , organization VARCHAR (1000) , location VARCHAR (80));";
+$result = $connection->query($create_table_event);
+
+if ($result==TRUE) {
+    echo "0\n";
+}
+else {
+    echo mysqli_error($connection);
+}
+
+$create_table_career = "CREATE TABLE career (title VARCHAR (50) , description VARCHAR (500) , poster VARCHAR (30) , joblink VARCHAR (100));";
+$result = $connection->query($create_table_career);
+
+if ($result==TRUE) {
+    echo "0\n";
+}
+else {
+    echo mysqli_error($connection);
+}
+
+$create_table_news = "CREATE TABLE news (title VARCHAR (50) , description VARCHAR (500) , pic VARCHAR (70));";
+$result = $connection->query($create_table_news);
+
+if ($result==TRUE) {
+    echo "0\n";
+}
+else {
+    echo mysqli_error($connection);
+}
 mysqli_close($connection);
