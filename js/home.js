@@ -334,7 +334,7 @@ function loadCareer() {
             var des = ara[i]['description'];
             var link = ara[i]['joblink'];
             var pp = "img/dummy.png";
-            if(ara[i]['pp'] != null){
+            if(ara[i]['pp'] != ""){
                 pp = "../"+ara[i]['pp'];
             }
 
