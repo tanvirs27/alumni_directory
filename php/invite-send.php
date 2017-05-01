@@ -31,7 +31,7 @@ $invite_check= "SELECT * FROM invite WHERE email = '". $invite_email."';";
 if(($result = $connection->query($email_check)) && $result->num_rows > 0){
     echo "This user is already a member of CSEDU Alumni Directory";
 }
-if(($result = $connection->query($invite_check)) && $result->num_rows > 0) {
+else if(($result = $connection->query($invite_check)) && $result->num_rows > 0) {
     echo "This email has already got an invitation";
 }else if(($result1 = $connection->query($get_name))){
 
