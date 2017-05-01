@@ -5,8 +5,13 @@
 function OnLinkedInFrameworkLoad() {
     IN.Event.on(IN, "auth", OnLinkedInAuth);
 
-    $('a[id*=li_ui_li_gen_]').css({marginBottom:'20px'})
-        .html('<img src="img/ln-button.jpg" height="50" width="100% border="0" />');
+   // $('a[id*=li_ui_li_gen_]').css({marginBottom:'20px'})
+    //    .html('<img src="img/ln-button.jpg" height="50" width="100% border="0" />');
+
+    $('a[id*=li_ui_li_gen_]')
+        .html('<a class="btn btn-block btn-social btn-linkedin"> <span class="fa fa-linkedin"><strong>in</strong></span> Sign in with LinkedIn </a> ');
+
+
 }
 
 function OnLinkedInAuth() {
@@ -33,7 +38,7 @@ function ShowProfileData(profiles) {
 
     console.log(id+" "+firstName+" "+lastName+" "+photo+" "+headline);
 
-    document.getElementById("name").value=firstName+" "+lastName;
-    document.getElementById("work").value=headline;
-    document.getElementById("profilePicture").src=photo;
+//    document.getElementById("name").value=firstName+" "+lastName;
+//    document.getElementById("work").value=headline;
+//    document.getElementById("profilePicture").src=photo;
 }
