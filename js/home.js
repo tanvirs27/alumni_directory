@@ -27,6 +27,7 @@
 function forgetPasswordCancel() {
     $('#forgot-modal').modal('hide');
 }
+
 $(document).ready(function () {
     $('#forgetEmailSubmission').submit(function (e) {
         //alert("here");
