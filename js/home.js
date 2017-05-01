@@ -308,7 +308,7 @@ function loadEvent() {
             block+='</div></div></div></div>';
         }
         if(block == ""){
-            block='<p class="h3">No Event Available</p>';
+            block='<h3 class="h3">No Event Available</h3>';
         }
         document.getElementById("eventList").innerHTML=block;
         console.log("from php:: "+data);
@@ -351,7 +351,7 @@ function loadCareer() {
             block+='</div></div></div></div>';
         }
         if(block == ""){
-            block='<p class="h3">No Career News Available</p>';
+            block='<h3 class="h3">No Career News Available</h3>';
         }
 
         document.getElementById("careerLog").innerHTML=block;
@@ -386,7 +386,7 @@ function loadNews(){
             block+='</div></div></div></div>';
         }
         if(block == ""){
-            block='<p class="h3">No News Available</p>';
+            block='<h3 class="h3">No News Available</h3>';
         }
         console.log("LOADNEWS"+block);
         document.getElementById("newFeed").innerHTML=block;
