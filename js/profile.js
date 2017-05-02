@@ -57,17 +57,6 @@ $(document).ready(function() {
     console.log("from js:: "+email1);
 
 
-    $.post("php/test.php", {
-
-        email: email1
-
-    }, function (data) {
-
-        console.log("from php:: "+data);
-
-
-    });
-
     $.post("php/profile.php", {
 
         email: email1

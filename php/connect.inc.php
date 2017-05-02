@@ -3,7 +3,7 @@
 //echo 'hello world';
 
 $a_host= 'localhost';
-$a_user= 'root';
+$a_user= 'alumni';
 $a_pass= 'rifat007';
 $a_db= 'alumni';
 

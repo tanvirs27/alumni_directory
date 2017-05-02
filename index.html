@@ -30,6 +30,14 @@
     <link href="lib/pnotify/dist/pnotify.css" rel="stylesheet">
 
 
+
+    <script type="text/javascript" src="http://platform.linkedin.com/in.js">
+        api_key: 81t2pllbr8lep1
+        onLoad: OnLinkedInFrameworkLoad
+        authorize: false
+    </script>
+
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -74,8 +82,12 @@
                 <input type="email" id="loginusername" placeholder="email@liame.com" required>
                 <input type="password" id="loginpassword" placeholder="Password" required>
 
-                <input type="button" id="linkedin" class="btn-linkedin login loginmodal-submit" value="Login With Linked In">
                 <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+            <!--    <input type="button" id="linkedin" class="btn-linkedin login loginmodal-submit" value="Login With Linked In">
+            -->
+                <script type="in/Login">
+                </script>
+
             </form>
 
             <div class="bg-danger" id="loginerror_message" align="center" style="margin-bottom: 5px;padding-top:5px;display: none; height: 25px">HELLO</div>
@@ -590,6 +602,7 @@
 <script src="js/jquery.waypoints.min.js"></script>
 <script src="js/modernizr.custom.js"></script>
 <script src="js/home.js"></script>
+<script src="js/logInMenu.js"></script>
 
 <!-- PNotify -->
 <script src="lib/pnotify/dist/pnotify.js"></script>
