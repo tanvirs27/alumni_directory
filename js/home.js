@@ -217,7 +217,7 @@ function invite() {
 
         console.log(data);
 
-        if (data=="success") {
+        if (data.includes("success")) {
 
             console.log("invite sent");
 
