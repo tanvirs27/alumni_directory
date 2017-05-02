@@ -2,6 +2,7 @@
  * Created by anando on 4/27/17.
  */
 
+var linkedinid="none";
 
 (function ($) {
     "use strict";
@@ -81,17 +82,12 @@ function logInSuccess() {
     logInCancel();
 }
 
-function invitesend() {
-    /*
-        TODO: NEED TO SEND EMAIL
-     */
-    var emailAdderss = $('#invitesendemail').val();
-}
-
 function logged_in() {
     document.getElementById("bs-example-navbar-collapse-1").innerHTML="<ul class='nav navbar-nav navbar-right'>"+
-        "<li> <a href='search.html'>Search for Alumni</a> </li>"+
+        "<li> <a href='search'>Search for Alumni</a> </li>"+
         "<li id='invite_or_request'> <a  href='#' data-target='#invite-modal' data-toggle=\"modal\">Invite Others</a> </li>"+
+        "<li id='job_post'> <a  href='#' data-target='#invite-modal' data-toggle=\"modal\">Post Job</a> </li>"+
+        "<li> <a href='profile'>Profile</a> </li>"+
         "<li id=\"login_or_signout\"> <a href=\"javascript:signMeOut()\" >Sign Out</a> </li> </ul>";
 
 
@@ -175,7 +171,7 @@ function login_func() {
         }, function (data) {
 
 
-            if (data.includes("1")) {
+            if (data.includes("success")) {
                 //REDIRECT
                 sessionStorage.setItem("user_email_login",name1);
                // $('#login_or_signout').innerHTML="<a href='index.html' onclick='signMeOut()'>Sign Out</a>";
@@ -183,14 +179,28 @@ function login_func() {
                 //document.getElementById("error_message").innerHTML = data;
                 console.log("logged in");
 
+                new PNotify({
+                    title: 'Success',
+                    text: "Successfully signed in",
+                    type: 'success',
+                    styling: 'bootstrap3'
+                });
+
                 logged_in();
 
                 logInCancel();
 
             }
             else {
-                document.getElementById("loginerror_message").style.display="block"
-                document.getElementById("loginerror_message").innerHTML = data;
+
+                new PNotify({
+                    title: 'Error :(',
+                    text: data,
+                    type: 'error',
+                    styling: 'bootstrap3'
+                });
+                //document.getElementById("loginerror_message").style.display="block"
+                //document.getElementById("loginerror_message").innerHTML = data;
                 console.log(data);
             }
         });
@@ -198,6 +208,59 @@ function login_func() {
     }
 
 
+}
+
+
+function login_with_linkedin(id) {
+    $.post("php/login-linkedin.php", {
+
+
+        linkedinid: id
+
+    }, function (data) {
+
+        if(data.includes("###ERROR1###")){
+
+            new PNotify({
+                title: 'Error :(',
+                text: "This linkedin id is not registerred",
+                type: 'error',
+                styling: 'bootstrap3'
+            });
+
+        }
+        else if(data.includes("###ERROR2###")){
+
+            new PNotify({
+                title: 'Error :(',
+                text: "Could not sign in",
+                type: 'error',
+                styling: 'bootstrap3'
+            });
+
+        }
+        else {
+            //REDIRECT
+            sessionStorage.setItem("user_email_login",data);
+            // $('#login_or_signout').innerHTML="<a href='index.html' onclick='signMeOut()'>Sign Out</a>";
+            //window.location.href = "search.html";
+            //document.getElementById("error_message").innerHTML = data;
+            console.log("logged in");
+
+            new PNotify({
+                title: 'Success',
+                text: "Successfully signed in",
+                type: 'success',
+                styling: 'bootstrap3'
+            });
+
+            logged_in();
+
+            logInCancel();
+
+        }
+
+    });
 }
 
 
@@ -393,6 +456,46 @@ function loadNews(){
     });
 
 }
+
+
+//linkedin
+
+/**
+ * Created by rifat on 4/10/17.
+ */
+
+function OnLinkedInFrameworkLoad() {
+    IN.Event.on(IN, "auth", OnLinkedInAuth);
+
+    // $('a[id*=li_ui_li_gen_]').css({marginBottom:'20px'})
+    //    .html('<img src="img/ln-button.jpg" height="50" width="100% border="0" />');
+
+    $('a[id*=li_ui_li_gen_]')
+        .html('<a class="btn btn-block btn-social btn-linkedin"> <span class="fa fa-linkedin"></span> Sign in with LinkedIn </a> ');
+
+
+}
+
+function OnLinkedInAuth() {
+    IN.API.Profile("me").result(ShowProfileData);
+}
+
+function ShowProfileData(profiles) {
+    var member = profiles.values[0];
+    var id=member.id;
+    var firstName=member.firstName;
+    var lastName=member.lastName;
+    var photo=member.pictureUrl;
+    var headline=member.headline;
+
+    console.log(id+" "+firstName+" "+lastName+" "+photo+" "+headline);
+
+    linkedinid=id;
+
+    login_with_linkedin(id);
+}
+
+
 
 $(document).ready(function () {
     loadEvent();

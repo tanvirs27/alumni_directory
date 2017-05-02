@@ -10,9 +10,10 @@
     <link rel="stylesheet" href="css/bootstrap-social.css">
     <link href="lib/nprogress/nprogress.css" rel="stylesheet">
     <link href="lib/pnotify/dist/pnotify.css" rel="stylesheet">
+    <link href="css/search.css" rel="stylesheet">
 
 
-	<script type="text/javascript" src="http://platform.linkedin.com/in.js">
+    <script type="text/javascript" src="http://platform.linkedin.com/in.js">
         api_key: 81t2pllbr8lep1
         onLoad: OnLinkedInFrameworkLoad
         authorize: false
@@ -21,7 +22,23 @@
 
 <body lang="en">
 
-	<div class="container-fluid">
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+
+            <a class="navbar-brand" href="index">CSEDU Alumni Directory</a>
+        </div>
+
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+<div class="container-fluid">
     <form class="container" data-parsley-validate action="javascript:registerClick();">
 		<div class="container-page">				
 			<div class="col-md-6" >
@@ -32,7 +49,7 @@
 				</div>
 				<div class="form-group col-lg-12">
 					<label>Name:</label>
-					<input data-parsley-type="text" name="" class="form-control" id="signupname" value="" data-parsley-required="true">
+					<input type="text" name="" class="form-control" id="signupname" value="" data-parsley-required="true">
 				</div>
 				
 				<div id="pass-div" class="form-group col-lg-6">
@@ -80,7 +97,7 @@
 					By clicking on "Register" you agree to CSEDU's Terms and Conditions
 				</p>
 				<p>
-					This website is only for the alumni of CSEDU. If you are seeing this page that means anyone has sent you an invitation email. Before clicking the register button please read the terms and conditions given bellow:
+					This website is only for the alumni of CSEDU. If you are seeing this page that means anyone has sent you an invitation email. Before clicking the register button please read the terms and conditions given below:
 				</p>
 				<p>
 					This website will reserve your personal information. Some of them are mandatory. Like your email , name , batch number.
@@ -97,7 +114,7 @@
 					All right reserves to CSEDU.
 				</p>
 
-				<input type="submit" class="btn btn-primary">Register</input>
+				<input type="submit" class="btn btn-primary" value="Register">
 			</div>
 		</div>
 	</form>

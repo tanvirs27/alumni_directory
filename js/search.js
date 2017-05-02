@@ -22,6 +22,17 @@ for(var i=1; i<=23; i++){
 }
 
 
+$(document).ready(function () {
+
+    var email=sessionStorage.getItem("user_email_login");
+
+    if(email==null){
+
+        window.location.href="index";
+    }
+
+});
+
 function showProfile(i) {
 
 
@@ -131,3 +142,8 @@ function search_it() {
 }
 
 
+function signout() {
+    sessionStorage.removeItem("user_email_login");
+
+    window.location.href="index";
+}

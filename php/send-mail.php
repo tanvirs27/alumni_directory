@@ -13,7 +13,7 @@ function sendMailBySwift($name,$email,$pass,$invite_email,$code)
 
 
     $subject = 'Invitation | CSEDU Alumni Directory'; // Give the email a subject
-    $address="http://localhost/alumni_directory/invitation.php?code=".$code;
+    $address="http://csedu.cf/alumni/invitation.php?code=".$code;
     $body = '
  
     Hello CSEDU Alumni,

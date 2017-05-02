@@ -14,7 +14,7 @@ $password = $_POST['pass'];
 $sql = "SELECT * FROM user WHERE email = '". $username."' AND password= '".$password."'";
 if($result = $connection->query($sql)){
     if($result->num_rows == 0)echo "wrong email or password";
-    else echo "1";
+    else echo "success";
 }
 else echo $connection->error;
 ?>
