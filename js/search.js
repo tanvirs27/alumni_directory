@@ -39,6 +39,11 @@ function showProfile(i) {
     console.log(ara[i][0]);
     $('#profileshow-modal').modal('show');
 
+    if(ara[0][14].length>0)
+        $("#profile-img").attr('src', "../"+ara[0][14]);
+    else
+        $("#profile-img").attr('src', 'img/dummy.png');
+
     for(var j=0;j<=13;j++){
         if(j==2){
             continue;
@@ -85,15 +90,6 @@ function search_it() {
             work: work
         },function(data){
 
-            //alert(data);
-            /*$("#returnmessage").html("");
-            $("#returnmessage").append(data);
-
-            if(data.includes("Thank you for your valuable feedback")){
-                $("#form")[0].reset();
-            }
-            */
-
             ara= JSON.parse(data);
             //console.log(ara.size);
             var block="";
@@ -101,7 +97,7 @@ function search_it() {
             for(i in ara){
                 console.log('i '+i);
                 if(i%4==0){
-                    console.log("here");
+
                     block+='<div class="row">';
                 }
                 var email= ara[i][0];
@@ -112,11 +108,16 @@ function search_it() {
 
                 var temp="javascript:showProfile("+i+")";
 
+                var img='./img/dummy.png';
+
+                if(ara[i][14]!="" && ara[i][14]!=null){
+                    img= "../"+ara[i][14]
+                }
 
                 block+='<div class="col-md-3">';
                 block+='<div class="block">';
                 block+='<div class="thumbnail">';
-                block+='<img src="img/dummy.png" alt="" class="img-responsive">';
+                block+='<img src="'+img+'" alt="" class="img-responsive">';
                 block+='<div class="caption">';
                 block+='<h1>'+name+'</h1>';
                 block+='<p>Batch: '+batch+'</p>';
