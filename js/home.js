@@ -86,7 +86,7 @@ function logged_in() {
     document.getElementById("bs-example-navbar-collapse-1").innerHTML="<ul class='nav navbar-nav navbar-right'>"+
         "<li> <a href='search'>Search for Alumni</a> </li>"+
         "<li id='invite_or_request'> <a  href='#' data-target='#invite-modal' data-toggle=\"modal\">Invite Others</a> </li>"+
-        "<li id='job_post'> <a  href='#' data-target='#invite-modal' data-toggle=\"modal\">Post Job</a> </li>"+
+        "<li id='job_post'> <a  href='#' data-target='#job-modal' data-toggle=\"modal\">Post Job</a> </li>"+
         "<li> <a href='profile'>Profile</a> </li>"+
         "<li id=\"login_or_signout\"> <a href=\"javascript:signMeOut()\" >Sign Out</a> </li> </ul>";
 

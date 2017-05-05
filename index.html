@@ -70,6 +70,21 @@
     </div>
     <!-- /.container -->
 </nav>
+<div class="modal fade" id="job-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
+            <span onclick="$('#job-modal').modal('hide');"
+                  class="close" title="Close Modal">&times;</span>
+            <h1>Job Circular</h1><br>
+            <form id="jobSubmission">
+                <input type="text" name="subject" placeholder="Subject" required>
+                <input type="text" name="body" placeholder="Details" style="height: 200px;" required>
+                <input type="text" name="body" placeholder="Link (optional)">
+                <input id="jobsubmitbutton" type="submit" name="login" class="login loginmodal-submit" value="Post Job">
+            </form>
+        </div>
+    </div>
+</div>
 
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
