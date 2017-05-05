@@ -451,6 +451,8 @@ function loadCareer() {
             block+='<p id="jobdes'+ind+'">'+des.substr(0,50)+'</p>';
             if(des.length>50){
                 block+='<p style="display: none" id="jobdesdetails'+ind+'">'+des+'</p>';
+                block+='<p style="display: none" id="jobdlinkdetails'+ind+'">'+link+'</p>';
+                block+='<p style="display: none" id="jobdtitleetails'+ind+'">'+title+'</p>';
                 block+='<a href="#careerLog" style="margin-left: 110px;color: #0a568c; "';
                 block+='data-count="'+ind+'" id="morejob'+ind+'"';
                 block+='onclick="showjobdetails(this)">More...</a>';
@@ -468,10 +470,18 @@ function loadCareer() {
 
 function showjobdetails(obj) {
     var ind = obj.getAttribute("data-count");
+    console.log(ind);
     //obj.display='none';
-    document.getElementById("morejob"+ind).style.display='none';
-    document.getElementById("jobdes"+ind).style.display='none';
-    document.getElementById("jobdesdetails"+ind).style.display='block';
+    //document.getElementById("morejob"+ind).style.display='none';
+    //document.getElementById("jobdes"+ind).style.display='none';
+    var title = document.getElementById("jobdtitleetails"+ind).innerHTML;
+    var link = document.getElementById("jobdlinkdetails"+ind).innerHTML;
+    var details = document.getElementById("jobdesdetails"+ind).innerHTML;
+    console.log(title);
+    document.getElementById("jobdetailsdescription").innerHTML=details;
+    document.getElementById("jobdetailslink").setAttribute("href",link);
+    document.getElementById("jobdetailstitle").innerHTML = title;
+    $('#jobmodal').modal('show');
 }
 
 function loadNews(){

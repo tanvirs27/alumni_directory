@@ -15,7 +15,7 @@
 <body>
 
 <a href="#" data-toggle="modal" data-target="#jobmodal">Login</a>
-<div class="modal fade" style="display: none" id="jobmodal">
+<div class="modal fade" style="display: none" id="jobmodal" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -23,9 +23,15 @@
                 <p class="h3">Job Details</p>
             </div>
             <div class="modal-body">
-                <p class="h1" id="jobdetailstitle">fdslkjfsdlkdjflksjdflksdjflkjlsdfjlkjsdlkfjlslkfdjlkjsfdlkj</p>
+                <a style="width: auto;margin-left: 50%" href="#" id="jobdetailslink"><p class="h3 text-center" id="jobdetailstitle">Hello</p></a>
+                <div class="form-group">
+                    <p class="text-left text-justify" id="jobdetailsdescription">HELLO</p>
+                </div>
             </div>
 
+            <div class="modal-footer">
+                <button style="width: 100px;align-self: flex-end" class="btn btn-block btn-warning" onclick="$('#jobmodal').modal('hide');">GOT IT!!!</button>
+            </div>
         </div>
     </div>
 </div>
