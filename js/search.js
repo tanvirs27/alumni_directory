@@ -117,7 +117,7 @@ function search_it() {
                 block+='<div class="col-md-3">';
                 block+='<div class="block">';
                 block+='<div class="thumbnail">';
-                block+='<img src="'+img+'" alt="" class="img-responsive">';
+                block+='<img src="'+img+'" alt="" class="img-responsive" >';
                 block+='<div class="caption">';
                 block+='<h1>'+name+'</h1>';
                 block+='<p>Batch: '+batch+'</p>';
