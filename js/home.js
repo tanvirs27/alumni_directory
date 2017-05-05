@@ -438,7 +438,7 @@ function loadCareer() {
             if(ara[i]['pp'] != ""){
                 pp = "../"+ara[i]['pp'];
             }
-
+            block+='<div class="list-group-item">';
             block+='<div class="company-item clearfix">';
             block+='<div class="company-logo">';
             block+="<img src='"+pp+"'"+"alt=''"+"style='height: 100px;width: 100px;'>";
@@ -457,7 +457,7 @@ function loadCareer() {
                 block+='data-count="'+ind+'" id="morejob'+ind+'"';
                 block+='onclick="showjobdetails(this)">More...</a>';
             }
-            block+='</div></div></div></div>';
+            block+='</div></div></div></div></div>';
         }
         if(block == ""){
             block='<h3 class="h3">No Career News Available</h3>';
@@ -500,7 +500,7 @@ function loadNews(){
             var img = "../"+ara[i][2];
             var title=ara[i][0];
             var des = ara[i][1];
-
+            block+='<div class="list-group-item">'
             block+='<div class="post-item clearfix ">';
             block+='<div class="image-frame post-photo-wrapper">';
             //block+='<a href="#"> <img src="'+img+'"'+'alt="" height="100px" width="100px"></a>';
@@ -518,7 +518,7 @@ function loadNews(){
                 block+='data-count="'+mnumb+'" id="more'+mnumb+'"';
                 block+='onclick="showeventdetails(this)">More...</a>';
             }
-            block+='</div></div></div></div>';
+            block+='</div></div></div></div></div>';
         }
         if(block == ""){
             block='<h3 class="h3">No News Available</h3>';
