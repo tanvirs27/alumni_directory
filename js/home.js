@@ -37,7 +37,7 @@ $(document).ready(function () {
     });
     $('#request_form').submit(function (e) {
         e.preventDefault();
-        reqSuccess();
+        request_membership();
     });
     $('#loginform').submit(function (e) {
         //alert("login");
@@ -102,13 +102,6 @@ function not_logged_in() {
 
 
 
-function reqSuccess() {
-    //document.getElementById("requestModal").innerHTML="<p class='h3'>Request Send. Please Wait till admin confirm.</p>"
-    //document.getElementById("reqSend").style.display='none';
-
-    reqCancel();
-    alert("Request Send. Wait Till Admin confirms.");
-}
 function reqCancel() {
     //document.getElementById("requestModal").style.display='none';
     $('#request-modal').modal('hide');
@@ -261,6 +254,53 @@ function login_with_linkedin(id) {
         }
 
     });
+}
+
+
+function request_membership() {
+    var req_email= document.getElementById("reqemail").value;
+    var req_name= document.getElementById("reqname").value;
+    var req_batch= document.getElementById("reqbatch").value;
+    var req_url= document.getElementById("requrl").value;
+
+    console.log("inside invite");
+
+    $.post("php/request-add.php", {
+
+        name: req_name,
+        email: req_email,
+        batch: req_batch,
+        social: req_url
+
+    }, function (data) {
+
+        console.log(data);
+
+        if (data.includes("success")) {
+
+            console.log("request added");
+
+            new PNotify({
+                title: 'Success',
+                text: "Your request is sent!",
+                type: 'success',
+                styling: 'bootstrap3'
+            });
+
+
+        }
+        else {
+            console.log("error: "+data);
+            new PNotify({
+                title: 'Error :(',
+                text: data,
+                type: 'error',
+                styling: 'bootstrap3'
+            });
+        }
+    });
+
+    $('#request-modal').modal('hide');
 }
 
 

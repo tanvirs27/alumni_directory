@@ -19,6 +19,9 @@
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
+    <link href="../lib/pnotify/dist/pnotify.css" rel="stylesheet">
+
+
 </head>
 <body>
 
@@ -45,17 +48,17 @@
             ADMIN LOGIN
         </div>
         <div class="panel-body">
-            <form role="form">
+            <form role="form" action="javascript:login();">
 
                 <div class="form-group">
                     <label>Enter Email</label>
-                    <input class="form-control" type="text" />
-                    <p class="help-block">Help text here.</p>
+                    <input id="email" class="form-control" type="text" required="required"/>
+
                 </div>
                 <div class="form-group">
                     <label>Enter Password</label>
-                    <input class="form-control" type="password" />
-                    <p class="help-block">Help text here.</p>
+                    <input id="password" class="form-control" type="password" required="required"/>
+
                 </div>
 
                 <button type="submit" class="btn btn-primary">Login </button>
@@ -74,9 +77,12 @@
 <script src="../js/jquery.js"></script>
 <!-- BOOTSTRAP SCRIPTS  -->
 <script src="../js/bootstrap.js"></script>
-<!-- CUSTOM SCRIPTS  -->
+<!-- CUSTOM SCRIPTS
 <script src="../js/admin.js"></script>
-
+-->
+<script src="../js/admin_login.js"></script>
+<!-- PNotify -->
+<script src="../lib/pnotify/dist/pnotify.js"></script>
 
 </body>
 </html>

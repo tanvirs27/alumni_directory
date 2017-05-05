@@ -23,6 +23,7 @@
 
     <!-- Custom Theme Style -->
     <link href="../css/admin2.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/modals.css">
 
     <!-- PNotify -->
     <link href="../lib/pnotify/dist/pnotify.css" rel="stylesheet">
@@ -49,21 +50,17 @@
                     <div class="menu_section">
                         <h3>General</h3>
                         <ul class="nav side-menu">
-                            <li><a href="index.php"><i class="fa fa-user"></i> Membership Requests </a></li>
-                            <li><a href="education.php"><i class="fa fa-book"></i> Education </a></li>
-                            <li><a href="experience.php"><i class="fa fa-suitcase"></i> Experience </a></li>
-                            <li><a href="projects.php"><i class="fa fa-flask"></i> Projects </a></li>
-                            <li><a href="publications.php"><i class="fa fa-file-text"></i> Publications </a></li>
-                            <li><a href="honors.php"><i class="fa fa-trophy"></i> Honors </a></li>
-                            <li><a href="activities.php"><i class="fa fa-hand-paper-o"></i> Activities </a></li>
-                            <li><a href="social.php"><i class="fa fa-users"></i> Social </a></li>
+                            <li><a href="index.html"><i class="fa fa-user"></i> Membership Requests </a></li>
+                            <li><a href="experience.php"><i class="fa fa-suitcase"></i> Job Post </a></li>
+                            <li><a href="publications.php"><i class="fa fa-file-text"></i> News </a></li>
+                            <li><a href="social.php"><i class="fa fa-users"></i> Events </a></li>
 
                         </ul>
                     </div>
                     <div class="menu_section">
-                        <h3>Settings</h3>
+                        <h3>Account</h3>
                         <ul class="nav side-menu">
-                            <li><a href="settings.php"><i class="fa fa-wrench"></i> Settings </a></li>
+                            <li><a href="javascript:logout();"><i class="fa fa-sign-out"></i> Logout </a></li>
                         </ul>
                     </div>
 
@@ -100,18 +97,8 @@
                     </div>
 
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="">
-                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                <i class="fa fa-user" aria-hidden="true"></i> <?php echo $_SESSION['user']?>  <span class=" fa fa-angle-down"></span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                <li><a href="help.php">Help</a></li>
-                                <li><a href="mailto:team.batfia@gmail.com?subject=Elegant Resume Feedback">Feedback</a></li>
-                                <li><a href="https://devpost.com/mehamasum">About Us</a></li>
-                                <li><a href="logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
-                            </ul>
-                        </li>
-                        <li><a class="navbar-brand" href="#">CSEDU Alumni Directory</a></li>
+
+                        <li><a class="navbar-brand" href="../">CSEDU Alumni Directory</a></li>
                     </ul>
                 </nav>
             </div>
@@ -120,17 +107,35 @@
 
 
 
+        <!-- modal -->
+        <div class="modal fade" id="invite-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="loginmodal-container">
+            <span onclick="$('#invite-modal').modal('hide');"
+                  class="close" title="Close Modal">&times;</span>
+                    <h1>Invite CSEDU Alumni</h1><br>
+                    <form id="invite_form" action="javascript:invite('FROM_MODAL');">
+                        <input id="invite_email" type="email" name="email" placeholder="invite@email.com" required>
+                        <input id="invite_submit" type="submit" name="login" class="login loginmodal-submit" value="Send">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
         <!-- page content -->
         <div class="right_col" role="main">
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Education</h3>
+                        <h3>Membership Requests</h3>
                     </div>
 
                     <div class="title_right">
                         <div class="col-md-5 col-sm-5 col-xs-12 pull-right">
-                            <a href="education_input.php" class="btn btn-block btn-primary"><i class="fa fa-folder"></i> Add New School </a>
+                            <a href='#' data-target='#invite-modal' data-toggle="modal" class="btn btn-block btn-primary"><i class="fa fa-folder"></i> Add New Members </a>
                         </div>
                     </div>
                 </div>
@@ -141,21 +146,22 @@
                     <div class="col-md-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h4>All Schools</h4>
+                                <h4>All Requests</h4>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
 
-                                <p>You can add, modify or delete schools</p>
+                                <p>You can accept or reject requests</p>
 
                                 <!-- start project list -->
                                 <table class="table table-striped projects">
                                     <thead>
                                     <tr>
-                                        <th style="width: 5%">#</th>
-                                        <th style="width: 30%">School</th>
-                                        <th>Time period</th>
-                                        <th style="width: 30%">Action</th>
+                                        <th style="width: 20%">Name</th>
+                                        <th style="width: 20%">Email</th>
+                                        <th style="width: 20%">Batch</th>
+                                        <th style="width: 20%">Social Link</th>
+                                        <th style="width: 20%">Action</th>
                                     </tr>
                                     </thead>
                                     <tbody id="table_body">
@@ -185,6 +191,7 @@
 </div>
 
 
+
 <!-- js imports>
 
 <!-- jQuery -->
@@ -196,24 +203,12 @@
 
 <!-- Custom Theme Scripts -->
 <script src="../js/admin2.js"></script>
+<script src="../js/admin_member.js"></script>
+
 
 <!-- PNotify -->
 <script src="../lib/pnotify/dist/pnotify.js"></script>
 
-<!-- Autosize -->
-<script src="../lib/autosize/dist/autosize.min.js"></script>
-
-
-<script>
-
-    $(document).ready(function () {
-
-        PNotify.removeAll();
-
-    });
-
-
-</script>
 
 </body>
 </html>

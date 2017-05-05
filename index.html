@@ -147,12 +147,11 @@
             <span onclick="$('#request-modal').modal('hide');"
                   class="close" title="Close Modal">&times;</span>
             <h1>Request Membership</h1><br>
-            <form id="request_form">
-                <input type="text" id="reqname" placeholder="your name">
-                <input type="email" name="reqemail" placeholder="your@email.com" required="required">
-                <input type="password" name="reqpass" placeholder="your password" required="required">
-                <input type="password" name="reqconfpass" placeholder="confirm password" required="required">
-                <input type="text" name="reqbatch" placeholder="batch no (i.e. 20)" required="required">
+            <form id="request_form" action="javascript:request_membership();">
+                <input type="text" id="reqname" placeholder="Your Name">
+                <input type="email" id="reqemail" placeholder="Your Email" required="required">
+                <input type="text" id="reqbatch" placeholder="Batch No (i.e. 20)" required="required">
+                <input type="url" pattern="https?://.+" id="requrl" placeholder="Social Account (i.e. facebook, linkedin)" required="required">
                 <input type="submit" class="login loginmodal-submit" value="Request" >
             </form>
         </div>
