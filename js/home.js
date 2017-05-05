@@ -174,7 +174,7 @@ function login_func() {
             if (data.includes("success")) {
                 //REDIRECT
                 sessionStorage.setItem("user_email_login",name1);
-               // $('#login_or_signout').innerHTML="<a href='index.html' onclick='signMeOut()'>Sign Out</a>";
+                // $('#login_or_signout').innerHTML="<a href='index.html' onclick='signMeOut()'>Sign Out</a>";
                 //window.location.href = "search.html";
                 //document.getElementById("error_message").innerHTML = data;
                 console.log("logged in");
@@ -410,7 +410,14 @@ function loadCareer() {
             block+='<div class="company-desc">';
             block+='<div class="company-title"><h6 class="heading-regular"><a href=https://"'+link+'">'+title+'</a></h6></div>';
             block+='<div class="company-excerpt">';
-            block+='<p>'+des+'</p>';
+            var ind = i.toString();
+            block+='<p id="jobdes'+ind+'">'+des.substr(0,50)+'</p>';
+            if(des.length>50){
+                block+='<p style="display: none" id="jobdesdetails'+ind+'">'+des+'</p>';
+                block+='<a href="#careerLog" style="margin-left: 110px;color: #0a568c; "';
+                block+='data-count="'+ind+'" id="morejob'+ind+'"';
+                block+='onclick="showjobdetails(this)">More...</a>';
+            }
             block+='</div></div></div></div>';
         }
         if(block == ""){
@@ -420,6 +427,14 @@ function loadCareer() {
         document.getElementById("careerLog").innerHTML=block;
         console.log("From php::" +data);
     });
+}
+
+function showjobdetails(obj) {
+    var ind = obj.getAttribute("data-count");
+    //obj.display='none';
+    document.getElementById("morejob"+ind).style.display='none';
+    document.getElementById("jobdes"+ind).style.display='none';
+    document.getElementById("jobdesdetails"+ind).style.display='block';
 }
 
 function loadNews(){
@@ -432,8 +447,9 @@ function loadNews(){
         console.log(ara);
         var block="";
         var i;
-
+        var cou = 0;
         for (i in ara){
+            cou++;
             var img = "../"+ara[i][2];
             var title=ara[i][0];
             var des = ara[i][1];
@@ -441,11 +457,20 @@ function loadNews(){
             block+='<div class="post-item clearfix ">';
             block+='<div class="image-frame post-photo-wrapper">';
             //block+='<a href="#"> <img src="'+img+'"'+'alt="" height="100px" width="100px"></a>';
-            block+='<a href="#"> <img src="'+img+'"'+'alt="" height="100px" width="100px"></a>';
+            block+='<a href="#newFeed"> <img src="'+img+'"'+'alt="" height="100px" width="100px"></a>';
             block+='</div> <div class="post-desc-wrapper"> <div class="post-desc">';
-            block+='<div class="post-title"><h6 class="heading-regular"><a href="#">'+title+'</a></h6></div>';
+            block+='<div class="post-title"><h6 class="heading-regular"><a href="#newFeed">'+title+'</a></h6></div>';
             block+='<div class="post-excerpt">';
-            block+='<p>'+des+'</p>';
+            var mnumb = cou.toString();
+            block+='<p id="eventdes'+mnumb+'">'+des.substr(0,50)+'...</p>';
+            //block+='<p id="eventdes"+i>'+des.substr(0,10)+'</p>';
+            if(des.length>50){
+                block+='<p style="display: none" id="eventdesdetails'+mnumb+'">'+des+'</p>';
+                //
+                block+='<a href="#newFeed" style="margin-left: 110px;color: #0a568c; "';
+                block+='data-count="'+mnumb+'" id="more'+mnumb+'"';
+                block+='onclick="showeventdetails(this)">More...</a>';
+            }
             block+='</div></div></div></div>';
         }
         if(block == ""){
@@ -454,6 +479,17 @@ function loadNews(){
         console.log("LOADNEWS"+block);
         document.getElementById("newFeed").innerHTML=block;
     });
+
+}
+
+function showeventdetails(obj) {
+
+    //alert(obj.getAttribute("data-count"));
+    var ind = obj.getAttribute("data-count");
+    obj.display='none';
+    document.getElementById("more"+ind).style.display='none';
+    document.getElementById("eventdes"+ind).style.display='none';
+    document.getElementById("eventdesdetails"+ind).style.display='block';
 
 }
 
@@ -471,7 +507,7 @@ function OnLinkedInFrameworkLoad() {
     //    .html('<img src="img/ln-button.jpg" height="50" width="100% border="0" />');
 
     $('a[id*=li_ui_li_gen_]')
-        .html('<a class="btn btn-block btn-social btn-linkedin"> <span class="fa fa-linkedin"></span> Sign in with LinkedIn </a> ');
+        .html('<a style="background-color: #000; width: 290px" class="btn btn-block btn-social btn-linkedin" > <span class="fa fa-linkedin"></span> Sign in with LinkedIn </a> ');
 
 
 }
