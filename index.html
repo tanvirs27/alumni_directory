@@ -109,6 +109,29 @@
     </div>
 </div>
 
+
+<div class="modal fade" style="display: none" id="newsmodal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="close" onclick="$('#newsmodal').modal('hide');">&times;</div>
+                <p class="h3">News Details</p>
+            </div>
+            <div class="modal-body">
+                <img class="img-circle" style="margin-left: 40%;width: 100px; height: 100px;" id="newsdetailslink">
+                <p class="h3 text-center" id="newsdetailstitle">Hello</p>
+                <div class="form-group">
+                    <p class="text-left text-justify" id="mynewsdetailsdescription">HELLO</p>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button style="width: 100px;align-self: flex-end" class="btn btn-block btn-warning" onclick="$('#newsmodal').modal('hide');">GOT IT!!!</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
         <div class="loginmodal-container">

@@ -513,6 +513,8 @@ function loadNews(){
             //block+='<p id="eventdes"+i>'+des.substr(0,10)+'</p>';
             if(des.length>50){
                 block+='<p style="display: none" id="eventdesdetails'+mnumb+'">'+des+'</p>';
+                block+='<p style="display: none" id="eventtitledetails'+mnumb+'">'+title+'</p>';
+                block+='<p style="display: none" id="eventlinkdetails'+mnumb+'">'+img+'</p>';
                 //
                 block+='<a href="#newFeed" style="margin-left: 110px;color: #0a568c; "';
                 block+='data-count="'+mnumb+'" id="more'+mnumb+'"';
@@ -533,11 +535,16 @@ function showeventdetails(obj) {
 
     //alert(obj.getAttribute("data-count"));
     var ind = obj.getAttribute("data-count");
-    obj.display='none';
-    document.getElementById("more"+ind).style.display='none';
-    document.getElementById("eventdes"+ind).style.display='none';
-    document.getElementById("eventdesdetails"+ind).style.display='block';
-
+    //obj.display='none';
+    //document.getElementById("more"+ind).style.display='none';
+    var des = document.getElementById("eventdesdetails"+ind).innerHTML;
+    var title = document.getElementById("eventtitledetails"+ind).innerHTML;
+    var link = document.getElementById("eventlinkdetails"+ind).innerHTML;
+    console.log(link+" "+des+" "+title);
+    document.getElementById("mynewsdetailsdescription").innerHTML=des;
+    document.getElementById("newsdetailslink").setAttribute("src",link);
+    document.getElementById("newsdetailstitle").innerHTML = title;
+    $('#newsmodal').modal('show');
 }
 
 
