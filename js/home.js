@@ -49,8 +49,13 @@ $(document).ready(function () {
         invitesend();
     });
     $('#firstmore').click(function () {
-        alert("clicked");
+        //alert("clicked");
         morefirst();
+    });
+
+    $('#jobSubmission').submit(function (e) {
+       e.preventDefault();
+       postJob();
     });
 
 
@@ -63,6 +68,39 @@ $(document).ready(function () {
     }
 });
 
+
+function postJob() {
+    var email=sessionStorage.getItem("user_email_login");
+    var subject = document.getElementById("jobSubject").value;
+    var details = document.getElementById("jobDetails").value;
+    var links = document.getElementById("jobLink").value;
+
+    $.post("php/postjob.php", {
+
+        mail: email,
+        sub : subject,
+        det : details,
+        lin : links
+    }, function (data) {
+        console.log(data);
+        if(data.includes("1")){
+            new PNotify({
+                title: 'Success',
+                text: "Successfully Posted. Reload Your Browser",
+                type: 'success',
+                styling: 'bootstrap3'
+            });
+            $('#job-modal').modal('hide');
+        }else{
+            new PNotify({
+                title: 'Failed',
+                text: data.toString(),
+                type: 'warning',
+                styling: 'bootstrap3'
+            });
+        }
+    });
+}
 
 function forgetPasswordSubmit() {
     document.getElementById("forgetEmailSubmission").innerHTML="<p class='h5' align='center'>Password Sent.Please Check your Email.</p><input id='forget_pass_submit' type='submit' name='login' class='login loginmodal-submit' value='DONE' onclick='forgetPasswordCancel()'>";
@@ -400,7 +438,6 @@ function loadCareer() {
             if(ara[i]['pp'] != ""){
                 pp = "../"+ara[i]['pp'];
             }
-
 
             block+='<div class="company-item clearfix">';
             block+='<div class="company-logo">';
