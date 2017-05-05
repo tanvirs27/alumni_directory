@@ -49,8 +49,13 @@ $(document).ready(function () {
         invitesend();
     });
     $('#firstmore').click(function () {
-        alert("clicked");
+        //alert("clicked");
         morefirst();
+    });
+
+    $('#jobSubmission').submit(function (e) {
+       e.preventDefault();
+       postJob();
     });
 
 
@@ -63,6 +68,39 @@ $(document).ready(function () {
     }
 });
 
+
+function postJob() {
+    var email=sessionStorage.getItem("user_email_login");
+    var subject = document.getElementById("jobSubject").value;
+    var details = document.getElementById("jobDetails").value;
+    var links = document.getElementById("jobLink").value;
+
+    $.post("php/postjob.php", {
+
+        mail: email,
+        sub : subject,
+        det : details,
+        lin : links
+    }, function (data) {
+        console.log(data);
+        if(data.includes("1")){
+            new PNotify({
+                title: 'Success',
+                text: "Successfully Posted. Reload Your Browser",
+                type: 'success',
+                styling: 'bootstrap3'
+            });
+            $('#job-modal').modal('hide');
+        }else{
+            new PNotify({
+                title: 'Failed',
+                text: data.toString(),
+                type: 'warning',
+                styling: 'bootstrap3'
+            });
+        }
+    });
+}
 
 function forgetPasswordSubmit() {
     document.getElementById("forgetEmailSubmission").innerHTML="<p class='h5' align='center'>Password Sent.Please Check your Email.</p><input id='forget_pass_submit' type='submit' name='login' class='login loginmodal-submit' value='DONE' onclick='forgetPasswordCancel()'>";
@@ -440,8 +478,7 @@ function loadCareer() {
             if(ara[i]['pp'] != ""){
                 pp = "../"+ara[i]['pp'];
             }
-
-
+            block+='<div class="list-group-item">';
             block+='<div class="company-item clearfix">';
             block+='<div class="company-logo">';
             block+="<img src='"+pp+"'"+"alt=''"+"style='height: 100px;width: 100px;'>";
@@ -454,11 +491,13 @@ function loadCareer() {
             block+='<p id="jobdes'+ind+'">'+des.substr(0,50)+'</p>';
             if(des.length>50){
                 block+='<p style="display: none" id="jobdesdetails'+ind+'">'+des+'</p>';
+                block+='<p style="display: none" id="jobdlinkdetails'+ind+'">'+link+'</p>';
+                block+='<p style="display: none" id="jobdtitleetails'+ind+'">'+title+'</p>';
                 block+='<a href="#careerLog" style="margin-left: 110px;color: #0a568c; "';
                 block+='data-count="'+ind+'" id="morejob'+ind+'"';
                 block+='onclick="showjobdetails(this)">More...</a>';
             }
-            block+='</div></div></div></div>';
+            block+='</div></div></div></div></div>';
         }
         if(block == ""){
             block='<h3 class="h3">No Career News Available</h3>';
@@ -471,10 +510,18 @@ function loadCareer() {
 
 function showjobdetails(obj) {
     var ind = obj.getAttribute("data-count");
+    console.log(ind);
     //obj.display='none';
-    document.getElementById("morejob"+ind).style.display='none';
-    document.getElementById("jobdes"+ind).style.display='none';
-    document.getElementById("jobdesdetails"+ind).style.display='block';
+    //document.getElementById("morejob"+ind).style.display='none';
+    //document.getElementById("jobdes"+ind).style.display='none';
+    var title = document.getElementById("jobdtitleetails"+ind).innerHTML;
+    var link = document.getElementById("jobdlinkdetails"+ind).innerHTML;
+    var details = document.getElementById("jobdesdetails"+ind).innerHTML;
+    console.log(title);
+    document.getElementById("jobdetailsdescription").innerHTML=details;
+    document.getElementById("jobdetailslink").setAttribute("href",link);
+    document.getElementById("jobdetailstitle").innerHTML = title;
+    $('#jobmodal').modal('show');
 }
 
 function loadNews(){
@@ -493,7 +540,7 @@ function loadNews(){
             var img = "../"+ara[i][2];
             var title=ara[i][0];
             var des = ara[i][1];
-
+            block+='<div class="list-group-item">'
             block+='<div class="post-item clearfix ">';
             block+='<div class="image-frame post-photo-wrapper">';
             //block+='<a href="#"> <img src="'+img+'"'+'alt="" height="100px" width="100px"></a>';
@@ -506,12 +553,14 @@ function loadNews(){
             //block+='<p id="eventdes"+i>'+des.substr(0,10)+'</p>';
             if(des.length>50){
                 block+='<p style="display: none" id="eventdesdetails'+mnumb+'">'+des+'</p>';
+                block+='<p style="display: none" id="eventtitledetails'+mnumb+'">'+title+'</p>';
+                block+='<p style="display: none" id="eventlinkdetails'+mnumb+'">'+img+'</p>';
                 //
                 block+='<a href="#newFeed" style="margin-left: 110px;color: #0a568c; "';
                 block+='data-count="'+mnumb+'" id="more'+mnumb+'"';
                 block+='onclick="showeventdetails(this)">More...</a>';
             }
-            block+='</div></div></div></div>';
+            block+='</div></div></div></div></div>';
         }
         if(block == ""){
             block='<h3 class="h3">No News Available</h3>';
@@ -526,11 +575,16 @@ function showeventdetails(obj) {
 
     //alert(obj.getAttribute("data-count"));
     var ind = obj.getAttribute("data-count");
-    obj.display='none';
-    document.getElementById("more"+ind).style.display='none';
-    document.getElementById("eventdes"+ind).style.display='none';
-    document.getElementById("eventdesdetails"+ind).style.display='block';
-
+    //obj.display='none';
+    //document.getElementById("more"+ind).style.display='none';
+    var des = document.getElementById("eventdesdetails"+ind).innerHTML;
+    var title = document.getElementById("eventtitledetails"+ind).innerHTML;
+    var link = document.getElementById("eventlinkdetails"+ind).innerHTML;
+    console.log(link+" "+des+" "+title);
+    document.getElementById("mynewsdetailsdescription").innerHTML=des;
+    document.getElementById("newsdetailslink").setAttribute("src",link);
+    document.getElementById("newsdetailstitle").innerHTML = title;
+    $('#newsmodal').modal('show');
 }
 
 

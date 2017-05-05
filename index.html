@@ -77,11 +77,57 @@
                   class="close" title="Close Modal">&times;</span>
             <h1>Job Circular</h1><br>
             <form id="jobSubmission">
-                <input type="text" name="subject" placeholder="Subject" required>
-                <input type="text" name="body" placeholder="Details" style="height: 200px;" required>
-                <input type="text" name="body" placeholder="Link (optional)">
+                <input id="jobSubject" type="text" name="subject" placeholder="Subject" required>
+                <textarea id="jobDetails" type="text" name="body" placeholder="Details" style="height: 200px; width: 100%;font-size: 16px;" required></textarea>
+                <input id="jobLink" type="text" name="body" placeholder="Link (optional)">
                 <input id="jobsubmitbutton" type="submit" name="login" class="login loginmodal-submit" value="Post Job">
             </form>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" style="display: none" id="jobmodal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="close" onclick="$('#jobmodal').modal('hide');">&times;</div>
+                <p class="h3">Job Details</p>
+            </div>
+            <div class="modal-body">
+                <a style="width: auto;margin-left: 50%" href="#" id="jobdetailslink"><p class="h3 text-center" id="jobdetailstitle">Hello</p></a>
+                <div class="form-group">
+                    <p class="text-left text-justify" id="jobdetailsdescription">HELLO</p>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button style="width: 100px;align-self: flex-end" class="btn btn-block btn-warning" onclick="$('#jobmodal').modal('hide');">GOT IT!!!</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" style="display: none" id="newsmodal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="close" onclick="$('#newsmodal').modal('hide');">&times;</div>
+                <p class="h3">News Details</p>
+            </div>
+            <div class="modal-body">
+                <img class="img-circle" style="margin-left: 40%;width: 100px; height: 100px;" id="newsdetailslink">
+                <p class="h3 text-center" id="newsdetailstitle">Hello</p>
+                <div class="form-group">
+                    <p class="text-left text-justify" id="mynewsdetailsdescription">HELLO</p>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button style="width: 100px;align-self: flex-end" class="btn btn-block btn-warning" onclick="$('#newsmodal').modal('hide');">GOT IT!!!</button>
+            </div>
         </div>
     </div>
 </div>
@@ -305,8 +351,11 @@
                             <div class="title-links">
                                 <h3 class="heading-regular">Latest News</h3>
                             </div>
-                            <div class="post-wrapper" id="newFeed">
-                                <div class="post-item clearfix ">
+                            <div class="post-wrapper">
+                                <div class="list-group"  id="newFeed" style="max-height: 500px; overflow-y: scroll">
+
+                                </div>
+                                <!--<div class="post-item clearfix ">
                                     <div class="image-frame post-photo-wrapper">
                                         <a href="#"> <img src="img/new-img1.jpg" alt=""></a>
                                     </div>
@@ -358,7 +407,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="view-all"><a href="blog.html" style="display: none;">View All News</a></div>
                         </div>
@@ -368,8 +417,10 @@
                             <div class="title-links">
                                 <h3 class="heading-regular">Career Opportunity</h3>
                             </div>
-                            <div class="career-content" id="careerLog">
-                                <div class="company-item clearfix">
+                            <div class="career-content" >
+                                <div class="list-group" id="careerLog" style="max-height: 500px; overflow-y: scroll">
+                                </div>
+                                <!--<div class="company-item clearfix">
                                     <div class="company-logo">
                                         <img src="img/company-logo1.png" alt="">
                                     </div>
@@ -420,7 +471,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="view-all"><a href="career-opportunity.html" style="display: none">View All Career Opportunity</a></div>
                         </div>

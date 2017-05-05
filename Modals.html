@@ -14,7 +14,43 @@
 </head>
 <body>
 
-<a href="#" data-toggle="modal" data-target="#job-modal">Login</a>
+<a href="#" data-toggle="modal" data-target="#jobmodal">Login</a>
+<div class="modal fade" style="display: none" id="jobmodal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="close" onclick="$('#jobmodal').modal('hide');">&times;</div>
+                <p class="h3">Job Details</p>
+            </div>
+            <div class="modal-body">
+                <a style="width: auto;margin-left: 50%" href="#" id="jobdetailslink"><p class="h3 text-center" id="jobdetailstitle">Hello</p></a>
+                <div class="form-group">
+                    <p class="text-left text-justify" id="jobdetailsdescription">HELLO</p>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button style="width: 100px;align-self: flex-end" class="btn btn-block btn-warning" onclick="$('#jobmodal').modal('hide');">GOT IT!!!</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="jobdetails-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
+            <span onclick="$('#jobdetails-modal').modal('hide');"
+                  class="close" title="Close Modal">&times;</span>
+            <h1>Job Details</h1><br>
+            <form id="jobdetailsform">
+                <p data-icon="" style="margin-bottom:30px; font-size: 25px; font-weight: 200; color: #4d90fe; text-align: center;width: 100%;height: 25px;font-family: Raleway,Rekha;" id="jobdetSubject">jslfjlksdjflkdsjflksfjdlkjfhelkwjlkdjrlkwjrelkjl</p>
+                <textarea id="jobdetDetails" type="text" name="body" placeholder="Details" style="height: 200px; width: 100%;font-size: 16px;" required></textarea>
+                <a href="#" id="jobdetLink" style="font-size: 16px; text-align: center;width: 100%;height: 25px;">LINK</a>
+                <input id="jobdetsubmitbutton" type="submit" name="login" class="login loginmodal-submit" value="Post Job">
+            </form>
+        </div>
+    </div>
+</div>
+
 
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
