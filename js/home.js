@@ -116,6 +116,7 @@ function forgetPasswordSubmit() {
                 mode: "2",
                 pass: newPass
             },function (secdata) {
+                console.log("####MY DATA INCLUDES#### "+secdata);
                 if(secdata.includes("1")){
                     new PNotify({
                         title: 'Success',
@@ -640,8 +641,9 @@ function OnLinkedInFrameworkLoad() {
     // $('a[id*=li_ui_li_gen_]').css({marginBottom:'20px'})
     //    .html('<img src="img/ln-button.jpg" height="50" width="100% border="0" />');
 
+
     $('a[id*=li_ui_li_gen_]')
-        .html('<a style="background-color: #000; width: 290px" class="btn btn-block btn-social btn-linkedin" > <span class="fa fa-linkedin"></span> Sign in with LinkedIn </a> ');
+        .html('<a style="background-color: #1C2833; width: 290px;" class="btn btn-block btn-social btn-linkedin" > <span class="fa fa-linkedin"></span> Sign in with LinkedIn </a> ');
 
 
 }
