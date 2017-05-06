@@ -44,8 +44,8 @@ for(var i=1; i<=23; i++){
 
 function registerClick() {
     var name = $('#signupname').val();
-    var email = $('#signupmail').val();
-    var confemail = $('#signupconfmail').val();
+    var email = $('#signupmail').val().trim();
+    var confemail = $('#signupconfmail').val().trim();
     var pass = $('#signuppassword').val();
     var confpass = $('#signupconfpassword').val();
     var batch = $('#signupbatch').val();

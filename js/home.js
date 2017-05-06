@@ -337,12 +337,12 @@ function login_with_linkedin(id) {
 
 
 function request_membership() {
-    var req_email= document.getElementById("reqemail").value;
+    var req_email= document.getElementById("reqemail").value.trim();
     var req_name= document.getElementById("reqname").value;
     var req_batch= document.getElementById("reqbatch").value;
     var req_url= document.getElementById("requrl").value;
 
-    console.log("inside invite");
+    console.log("inside request");
 
     $.post("php/request-add.php", {
 
@@ -385,7 +385,7 @@ function request_membership() {
 
 
 function invite() {
-    var invite_email= document.getElementById("invite_email").value;
+    var invite_email= document.getElementById("invite_email").value.trim();
     var from_email= sessionStorage.getItem("user_email_login");
 
     console.log("inside invite");
