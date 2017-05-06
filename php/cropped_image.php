@@ -19,7 +19,7 @@ if ($connection->query($sql1) == TRUE) {
 
     $file_path = "../uploads/".$filename.".png";
 
-    $url = "alumni_directory/uploads/".$filename.".png";
+    $url = "alumni/uploads/".$filename.".png";
 
     try {
         file_put_contents($file_path, $data);
