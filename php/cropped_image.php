@@ -24,7 +24,7 @@ if ($connection->query($sql1) == TRUE) {
     try {
         file_put_contents($file_path, $data);
 
-        $sql = "UPDATE user SET pp = '" . $url. "' WHERE username='". $user. "';";
+        $sql = "UPDATE user SET pp = '" . $url. "' WHERE name='". $user. "';";
 
         if ($connection->query($sql) == TRUE) {
             echo "###".$url;
