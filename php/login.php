@@ -8,8 +8,8 @@
 require_once('connect.inc.php');
 
 $username = $_POST['user'];
-//$password = md5($_POST['pass']);
-$password = $_POST['pass'];
+$password = md5($_POST['pass']);
+//$password = $_POST['pass'];
 
 $sql = "SELECT * FROM user WHERE email = '". $username."' AND password= '".$password."'";
 if($result = $connection->query($sql)){

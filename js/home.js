@@ -103,7 +103,47 @@ function postJob() {
 }
 
 function forgetPasswordSubmit() {
-    document.getElementById("forgetEmailSubmission").innerHTML="<p class='h5' align='center'>Password Sent.Please Check your Email.</p><input id='forget_pass_submit' type='submit' name='login' class='login loginmodal-submit' value='DONE' onclick='forgetPasswordCancel()'>";
+    var emailID = $('#forget_pass_email').val();//document.getElementById("forget_pass_email").value ;
+    console.log(emailID);
+    $.post("php/forgetpasswordhandler.php", {
+        mail: emailID,
+        mode: "1"
+    }, function (data) {
+        if(data.includes("1")){
+            var newPass = Math.random().toString(36).slice(-8);
+            $.post("php/forgetpasswordhandler.php", {
+                mail: emailID,
+                mode: "2",
+                pass: newPass
+            },function (secdata) {
+                if(secdata.includes("1")){
+                    new PNotify({
+                        title: 'Success',
+                        text: "check you email",
+                        type: 'success',
+                        styling: 'bootstrap3'
+                    });
+                }else {
+                    new PNotify({
+                        title: 'Failed',
+                        text: secdata.toString(),
+                        type: 'warning',
+                        styling: 'bootstrap3'
+                    });
+                }
+            });
+        }else{
+            new PNotify({
+                title: 'Failed',
+                text: data.toString(),
+                type: 'warning',
+                styling: 'bootstrap3'
+            });
+        }
+    });
+
+    $('#forgot-modal').modal('hide');
+    //document.getElementById("forgetEmailSubmission").innerHTML="<p class='h5' align='center'>Password Sent.Please Check your Email.</p><input id='forget_pass_submit' type='submit' name='login' class='login loginmodal-submit' value='DONE' onclick='forgetPasswordCancel()'>";
 
 }
 
