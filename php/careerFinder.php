@@ -13,11 +13,13 @@ if(($result=$connection->query($sql))==TRUE){
 
     while ($row = mysqli_fetch_row($result)) {
         //$jsonData[] = $array;
-        $temp['title'] = $row[0];
-        $temp['description']=$row[1];
-        $temp['joblink']=$row[3];
+        $temp['title'] = $row[1];
+        $temp['description']=$row[2];
+        $temp['joblink']=$row[4];
+        $temp['poster']=$row[3];
+        $temp['id']=$row[0];
 
-        $sql = "SELECT * FROM user WHERE email='$row[2]'";
+        $sql = "SELECT * FROM user WHERE email='$row[3]'";
         if($myresult = $connection->query($sql)){
             if($row = mysqli_fetch_row($myresult)){
                 $temp['pp']=$row[14];
