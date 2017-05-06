@@ -19,26 +19,26 @@ if ($connection->query($sql1) == TRUE) {
 
     $file_path = "../uploads/".$filename.".png";
 
-    $url = "alumni_directory/uploads/".$filename.".png";
+    $url = "alumni/uploads/".$filename.".png";
 
     try {
         file_put_contents($file_path, $data);
 
-        $sql = "UPDATE user SET pp = '" . $url. "' WHERE username='". $user. "';";
+        $sql = "UPDATE user SET pp = '" . $url. "' WHERE email='". $user. "';";
 
         if ($connection->query($sql) == TRUE) {
             echo "###".$url;
         }
         else {
-            echo "ERR";
+            echo "ERR".$connection->error;
         }
     }
     catch (Exception $e) {
-        echo "ERR";
+        echo "ERR".$e->getMessage();
     }
 }
 else {
-    echo "ERR";
+    echo "ERR".$connection->error;
 }
 
 
