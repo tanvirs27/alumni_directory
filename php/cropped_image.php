@@ -30,15 +30,15 @@ if ($connection->query($sql1) == TRUE) {
             echo "###".$url;
         }
         else {
-            echo "ERR";
+            echo "ERR".$connection->error;
         }
     }
     catch (Exception $e) {
-        echo "ERR";
+        echo "ERR".$e->getMessage();
     }
 }
 else {
-    echo "ERR";
+    echo "ERR".$connection->error;
 }
 
 
