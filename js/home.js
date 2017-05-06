@@ -452,12 +452,12 @@ function loadEvent() {
         var block="";
         var i;
         for (i in ara){
-            var mday = ara[i][0];
-            var mon = ara[i][1];
-            var yr = ara[i][2];
-            var title = ara[i][3];
-            var organization = ara[i][4];
-            var location = ara[i][5];
+            var mday = ara[i][1];
+            var mon = ara[i][2];
+            var yr = ara[i][3];
+            var title = ara[i][4];
+            var organization = ara[i][5];
+            var location = ara[i][6];
 
             var receiveD = new Date(yr,mon,mday);
             var weekday = new Array(7);
@@ -578,9 +578,9 @@ function loadNews(){
         var cou = 0;
         for (i in ara){
             cou++;
-            var img = "../"+ara[i][2];
-            var title=ara[i][0];
-            var des = ara[i][1];
+            var img = "../"+ara[i][3];
+            var title=ara[i][1];
+            var des = ara[i][2];
             block+='<div class="list-group-item">'
             block+='<div class="post-item clearfix ">';
             block+='<div class="image-frame post-photo-wrapper">';
