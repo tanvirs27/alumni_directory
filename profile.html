@@ -363,7 +363,7 @@
                             var splits = res.split("###");
                             console.log(splits);
                             res = splits[1];
-                            if(res.length>0)$("#avatar").attr('src', "./"+res);
+                            if(res.length>0)$("#avatar").attr('src', "../"+res);
                             else
                                 $("#avatar").attr('src', 'img/dummy.png');
                         } else {
