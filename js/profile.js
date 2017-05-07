@@ -61,12 +61,32 @@ function submitCheck() {
         link : link
 
     }, function (data) {
-        console.log(data);
+        console.log("updated data "+data);
+
+        if(data.includes("success")){
+            new PNotify({
+                title: 'Success',
+                text: "Profile updated",
+                type: 'success',
+                styling: 'bootstrap3'
+            });
+
+        }else{
+            new PNotify({
+                title: 'Failed',
+                text: data,
+                type: 'error',
+                styling: 'bootstrap3'
+            });
+        }
+
     });
 }
+
 function pad(n) {
     return (n < 10) ? ("0" + n) : n;
 }
+
 function loading() {
     var block = "";
     for(i=1; i<32; i++){

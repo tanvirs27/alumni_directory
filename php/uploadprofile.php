@@ -24,7 +24,7 @@ $email = $_POST['email'];
 $sql = "UPDATE user SET name='$name', password='$pass',batch='$batch',dob='$dob',phone='$contact',blood='$blood',hometown='$home',address='$reside',state='$resState',country='$resCon',work='$work',fb='$face',linkedin='$link' WHERE email='$email';";
 
 if(($result = $connection->query($sql))==TRUE){
-    echo "1"."\n";
+    echo "success";
 }
-else echo $connection->error."\n";
+else echo "Profile cannot be updated";
 ?>
