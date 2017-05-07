@@ -32,7 +32,15 @@ $ara=array();
 
 if(strcmp($type,"1")==0){
 
-    if(($result=$connection -> query($from_email))==TRUE && mysqli_num_rows($result)>0) {
+
+    $json_a = json_decode($to, true);
+
+    foreach ($json_a as $email_a) {
+        array_push($ara,$email_a['email']);
+    }
+    mailSender($email , $pass, $ara, $subject, $body);
+    echo "success";
+   /* if(($result=$connection -> query($from_email))==TRUE && mysqli_num_rows($result)>0) {
 
         array_push($ara,$to);
 
@@ -42,6 +50,7 @@ if(strcmp($type,"1")==0){
 
         echo "User not found";
     }
+   */
 }else{
 
     if(($result=$connection -> query($from_batch))==TRUE && mysqli_num_rows($result)>0){

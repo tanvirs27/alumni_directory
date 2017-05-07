@@ -19,8 +19,107 @@ $(document).ready(function () {
         option.value =""+i+"";
     }
 
-
+    initial_suggest();
+    add_option();
 });
+
+
+function initial_suggest() {
+    /**
+     * Created by rifat on 5/8/17.
+     */
+
+    var REGEX_EMAIL = '([a-z0-9!#$%&\'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+/=?^_`{|}~-]+)*@' +
+        '(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)';
+
+    $('#mail-to').selectize({
+        persist: false,
+        maxItems: null,
+        maxOptions: 30,
+        valueField: 'email',
+        labelField: 'name',
+        searchField: ['name', 'email'],
+        options: [
+
+        ],
+        render: {
+            item: function(item, escape) {
+                return '<div>' +
+                    (item.name ? '<span class="name">' + escape(item.name) + '</span>' : '') +
+                    (item.email ? '<span class="email">' + escape(item.email) + '</span>' : '') +
+                    '</div>';
+            },
+            option: function(item, escape) {
+                var label = item.name || item.email;
+                var caption = item.name ? item.email : null;
+                return '<div>' +
+                    '<span class="label">' + escape(label) + '</span>' +
+                    (caption ? '<span class="caption">' + escape(caption) + '</span>' : '') +
+                    '</div>';
+            }
+        },
+        createFilter: function(input) {
+            var match, regex;
+
+            // email@address.com
+            regex = new RegExp('^' + REGEX_EMAIL + '$', 'i');
+            match = input.match(regex);
+            if (match) return !this.options.hasOwnProperty(match[0]);
+
+            // name <email@address.com>
+            regex = new RegExp('^([^<]*)\<' + REGEX_EMAIL + '\>$', 'i');
+            match = input.match(regex);
+            if (match) return !this.options.hasOwnProperty(match[2]);
+
+            return false;
+        },
+        create: function(input) {
+            if ((new RegExp('^' + REGEX_EMAIL + '$', 'i')).test(input)) {
+                return {email: input};
+            }
+            var match = input.match(new RegExp('^([^<]*)\<' + REGEX_EMAIL + '\>$', 'i'));
+            if (match) {
+                return {
+                    email : match[2],
+                    name  : $.trim(match[1])
+                };
+            }
+
+            return false;
+        }
+    });
+
+
+}
+
+
+function add_option() {
+
+
+    $.post("../php/admin-get-users.php", {
+
+        data: 'none'
+
+    }, function (data) {
+        console.log(data);
+        ara= JSON.parse(data);
+        //   console.log(ara[0][1]);
+
+        var $select = $("#mail-to").selectize();
+        var control = $select[0].selectize;
+
+        for(var i in ara){
+
+            control.addOption({
+
+                email: ara[i]['email'],
+                name: ara[i]['name']
+            });
+        }
+
+    });
+
+}
 
 
 function mailType(){
@@ -47,7 +146,16 @@ function sendMail() {
 
     if(type=="1"){
 
-        to=document.getElementById("mail-to").value;
+       // to=document.getElementById("mail-to").value;
+
+        var $select = $("#mail-to").selectize();
+        var selectize = $select[0].selectize;
+
+        var selected_objects = $.map(selectize.items, function(value) {
+            return selectize.options[value];
+        });
+
+        to=JSON.stringify(selected_objects);
     }else{
 
         to=document.getElementById("mail-to-batch").value;

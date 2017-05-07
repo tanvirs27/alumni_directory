@@ -27,6 +27,12 @@
     <!-- PNotify -->
     <link href="../lib/pnotify/dist/pnotify.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="../lib/selectize/dist/css/selectize.bootstrap3.css">
+
+    <link rel="stylesheet" href="../css/suggest.css">
+
+
+
 </head>
 
 <body class="nav-md">
@@ -148,7 +154,13 @@
                                     <div class="form-group" id="mail-ind-div">
                                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="mail-to">To</label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="text" id="mail-to" class="form-control col-md-7 col-xs-12">
+                                         <!--   <input type="text" id="mail-to" class="form-control col-md-7 col-xs-12"> -->
+
+                                                <select name="select" id="mail-to" class="contacts" multiple="multiple">
+
+                                                </select>
+
+
                                         </div>
                                     </div>
 
@@ -217,9 +229,10 @@
 <!-- Custom Theme Scripts -->
 <script src="../js/admin2.js"></script>
 <script src="../js/admin_mail.js"></script>
+<script src="../lib/selectize/dist/js/standalone/selectize.js"></script>
 
 
-<!-- PNotify -->
+<!-- PNotify <script src="../js/suggest.js"></script> -->
 <script src="../lib/pnotify/dist/pnotify.js"></script>
 
 
