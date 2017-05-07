@@ -11,7 +11,7 @@ require_once('connect.inc.php');
 
 $id = $_POST['linkedinid'];
 
-$sql = "SELECT email FROM user WHERE linkedin = '". $id."'";
+$sql = "SELECT email FROM user WHERE linkedin_id = '". $id."'";
 
 if($result = $connection->query($sql)){
 

@@ -77,9 +77,9 @@ $(document).ready(function() {
         document.getElementById("profile_reside").value = ara[0][8];
         document.getElementById("profile_res_state").value = ara[0][9];
         document.getElementById("profile_resd_country").value = ara[0][10];
-        //document.getElementById("profile_email").value = ara[0][0];
-        //document.getElementById("profile_email").value = ara[0][0];
-        //document.getElementById("profile_email").value = ara[0][0];
+        document.getElementById("profile_working_place").value = ara[0][11];
+        document.getElementById("profile_facebook").value = ara[0][12];
+        document.getElementById("profile_linked").value = ara[0][13];
         //document.getElementById("profile_email").value = ara[0][0];
 
 
