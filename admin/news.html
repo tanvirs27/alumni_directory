@@ -109,21 +109,6 @@
 
 
         <!-- modal -->
-        <div class="modal fade" id="invite-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-            <div class="modal-dialog">
-                <div class="loginmodal-container">
-            <span onclick="$('#invite-modal').modal('hide');"
-                  class="close" title="Close Modal">&times;</span>
-                    <h1>Invite CSEDU Alumni</h1><br>
-                    <form id="invite_form" action="javascript:invite('FROM_MODAL');">
-                        <input id="invite_email" type="email" name="email" placeholder="invite@email.com" required>
-                        <input id="invite_submit" type="submit" name="login" class="login loginmodal-submit" value="Send">
-                    </form>
-                </div>
-            </div>
-        </div>
-
-
 
 
         <div class="modal fade" id="newspost-modal" role="dialog">
@@ -226,18 +211,6 @@
 
 <!-- PNotify -->
 <script src="../lib/pnotify/dist/pnotify.js"></script>
-<script>
-    function postNews() {
-        $('#newspost-modal').modal('hide');
-        $.post("../php/pushnews.php",{
-            tit :$('#newsTitle').val(),
-            des :$('#newsDes').val(),
-            pic : "alumni_directory/uploads/18.png"
-        },function (data) {
-            console.log(data);
-        });
-    }
-</script>
 
 </body>
 </html>

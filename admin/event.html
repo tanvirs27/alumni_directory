@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Admin Panel</title>
+    <link rel="shortcut icon" href="../img/images.png">
 
 
 
@@ -38,7 +39,7 @@
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="index.html" class="site_title"> <span>Admin Panel</span></a>
+                    <a href="./" class="site_title"> <span>Admin Panel</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -109,20 +110,6 @@
 
 
         <!-- modal -->
-        <div class="modal fade" id="invite-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-            <div class="modal-dialog">
-                <div class="loginmodal-container">
-            <span onclick="$('#invite-modal').modal('hide');"
-                  class="close" title="Close Modal">&times;</span>
-                    <h1>Invite CSEDU Alumni</h1><br>
-                    <form id="invite_form" action="javascript:invite('FROM_MODAL');">
-                        <input id="invite_email" type="email" name="email" placeholder="invite@email.com" required>
-                        <input id="invite_submit" type="submit" name="login" class="login loginmodal-submit" value="Send">
-                    </form>
-                </div>
-            </div>
-        </div>
-
 
         <div class="modal fade" id="eventpost-modal" role="dialog">
             <div class="modal-dialog">
@@ -157,7 +144,7 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-block btn-primary" style="width: 120px" onclick="postNews()">POST</button>
+                        <button class="btn btn-block btn-primary" style="width: 120px" onclick="postEvent()">POST</button>
                     </div>
                 </div>
             </div>
@@ -239,21 +226,6 @@
 
 <!-- PNotify -->
 <script src="../lib/pnotify/dist/pnotify.js"></script>
-<script>
-    function postNews() {
-        $('#eventpost-modal').modal('hide');
-        $.post("../php/pushevent.php",{
-            tit :$('#eventTitle').val(),
-            day :$('#day').val(),
-            mon :$('#mon').val(),
-            yer :$('#year').val(),
-            org :$('#org').val(),
-            loc :$('#loc').val()
-        },function (data) {
-            console.log(data);
-        });
-    }
-</script>
 
 
 </body>

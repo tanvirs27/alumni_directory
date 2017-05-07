@@ -53,7 +53,6 @@ function get_events() {
                  "<td>"+ara[i][6]+"</td>"+
 
                  "<td>"+
-                 '<a href="javascript:invite(\''+i+'\')"' +" class='btn btn-info btn-xs'><i class='fa fa-pencil'></i> Edit </a>"+
                  '<a href="javascript:remove(\''+i+'\')"' +" class='btn btn-danger btn-xs'><i class='fa fa-trash'></i> Delete </a>"+
              "</td>"+
              "</tr>";
@@ -82,46 +81,35 @@ function remove(idx) {
 }
 
 
-function invite(invite_email) {
+function postEvent() {
+    $('#eventpost-modal').modal('hide');
 
-    if(invite_email=='FROM_MODAL')
-        invite_email= document.getElementById("invite_email").value;
-
-    console.log("invite email: "+invite_email );
-
-    $.post("../php/admin-invite-send.php", {
-
-        invite_email: invite_email,
-        from: "admin"
-
-    }, function (data) {
-
+    $.post("../php/pushevent.php",{
+        tit :$('#eventTitle').val(),
+        day :$('#day').val(),
+        mon :$('#mon').val(),
+        yer :$('#year').val(),
+        org :$('#org').val(),
+        loc :$('#loc').val()
+    },function (data) {
         console.log(data);
 
-        if (data.includes("success")) {
-
-            console.log("invite sent");
-
+        if(data.includes("1")){
             new PNotify({
                 title: 'Success',
-                text: "Invitation sent!",
+                text: "Event is posted",
                 type: 'success',
                 styling: 'bootstrap3'
             });
-
-
-        }
-        else {
-            console.log("error: "+data);
+            $('#eventpost-modal').modal('hide');
+            get_events();
+        }else{
             new PNotify({
-                title: 'Error :(',
-                text: data,
-                type: 'error',
+                title: 'Failed',
+                text: "Event can not posted",
+                type: 'warning',
                 styling: 'bootstrap3'
             });
         }
     });
-
-    $('#invite-modal').modal('hide');
-    remove(invite_email);
 }
