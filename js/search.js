@@ -31,6 +31,42 @@ $(document).ready(function () {
         window.location.href="index";
     }
 
+    var email1 = sessionStorage.getItem("user_email_login");
+
+
+    $.post("php/profile.php", {
+
+        email: email1
+
+    }, function (data) {
+        console.log(data);
+        var ara= JSON.parse(data);
+        //console.log(ara[0][1]);
+
+        var count=0;
+        for(var i=1;i<=14;i++){
+
+            if(ara[0][i]==""){
+                count++;
+            }
+        }
+
+        var x= 14-count;
+
+        var par= x*100.0/14.0;
+
+        var com= Math.round(par);
+
+
+        if(com==100){
+            document.getElementById("completeness").style.display="none";
+        }else {
+            document.getElementById("completeness").innerHTML = '<p class="bg-info">Your profile is ' + com + '% complete. Complete it <a href="profile">here</a></p>';
+        }
+
+
+    });
+
 });
 
 function showProfile(i) {
