@@ -23,20 +23,63 @@ function testingPassowrd() {
 }
 
 function submitCheck() {
-    testingPassowrd();
-}
+    //testingPassowrd();
+    var name = $('#profile_name').val();
+    var email = $('#profile_email').val();
+    var pass = $('#mypass').val();
+    var batch = $('#profile_batch').val();
+    var phone = $('#profile_contact_number').val();
+    var blood = $('#profile_blood_group').val();
+    var bday = $('#profile_day').val();
+    var bmon = $('#profile_mon').val();
+    var byear = $('#profile_year').val();
+    var hometown = $('#profile_hometown').val();
+    var reside = $('#profile_reside').val();
+    var res_state = $('#profile_res_state').val();
+    var res_country = $('#profile_resd_country').val();
+    var working_place = $('#profile_working_place').val();
+    var facebook = $('#profile_facebook').val();
+    var link = $('#profile_linked').val();
 
+    var dob = bday+"/"+bmon+"/"+byear;
+
+    $.post("php/uploadprofile.php", {
+
+        email: email,
+        name : name,
+        pass : pass,
+        batch: batch,
+        contact: phone,
+        blood: blood,
+        dob : dob,
+        home : hometown,
+        resA : reside,
+        resS : res_state,
+        resC : res_country,
+        work : working_place,
+        face : facebook,
+        link : link
+
+    }, function (data) {
+        console.log(data);
+    });
+}
+function pad(n) {
+    return (n < 10) ? ("0" + n) : n;
+}
 function loading() {
     var block = "";
     for(i=1; i<32; i++){
-        block+='<option value='+'\"'+i+'\">'+i+'</option>';
+        var numb = pad(i);
+        block+='<option value='+'\"'+numb+'\">'+numb+'</option>';
         //alert(block);
     }
     document.getElementById("profile_day").innerHTML=block;
 
     block="";
     for(i=1; i<13; i++){
-        block+='<option value='+'\"'+i+'\">'+i+'</option>';
+        var numb = pad(i);
+        block+='<option value='+'\"'+numb+'\">'+numb+'</option>';
         //alert(block);
     }
     document.getElementById("profile_mon").innerHTML=block;
@@ -66,6 +109,15 @@ $(document).ready(function() {
         var ara= JSON.parse(data);
         console.log(ara[0][1]);
 
+        var day = ara[0][4];
+
+        console.log(day);
+        var dayslpt = new Array();
+        dayslpt = day.split("/");
+        //console.log(dayslpt[1]);
+        $('#profile_day').val(dayslpt[0]);//=dayslpt[0];
+        $('#profile_mon').val(dayslpt[1]);
+        $('#profile_year').val(dayslpt[2]);
         document.getElementById("profile_name").value = ara[0][1];
         document.getElementById("profile_email").value = ara[0][0];
         document.getElementById("mypass").value = ara[0][2];
