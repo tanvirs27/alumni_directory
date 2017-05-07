@@ -643,7 +643,7 @@ function OnLinkedInFrameworkLoad() {
 
 
     $('a[id*=li_ui_li_gen_]')
-        .html('<a style="background-color: #1C2833; width: 290px;" class="btn btn-block btn-social btn-linkedin" > <span class="fa fa-linkedin"></span> Sign in with LinkedIn </a> ');
+        .html('<img src="img/Sign-In-Large.png" width="290px" border="0" />');
 
 
 }
