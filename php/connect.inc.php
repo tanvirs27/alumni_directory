@@ -3,8 +3,8 @@
 //echo 'hello world';
 
 $a_host= 'localhost';
-$a_user= 'alumni';
-$a_pass= 'rifat007';
+$a_user= 'root';
+$a_pass= '';
 $a_db= 'alumni';
 
 // Create connection
