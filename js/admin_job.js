@@ -52,7 +52,6 @@ function get_job_posts() {
                  "<td>"+"<a href='"+ara[i]['joblink']+"' class='btn btn-info btn-xs'><i class='fa fa-check'></i> Check </a>"+"</td>"+
 
              "<td>"+
-                 '<a href="javascript:invite(\''+i+'\')"' +" class='btn btn-info btn-xs'><i class='fa fa-pencil'></i> Edit </a>"+
                  '<a href="javascript:remove(\''+i+'\')"' +" class='btn btn-danger btn-xs'><i class='fa fa-trash'></i> Delete </a>"+
              "</td>"+
              "</tr>";
@@ -81,46 +80,36 @@ function remove(idx) {
 }
 
 
-function invite(invite_email) {
+function postJob() {
+    var email= "rifat.csedu20@gmail.com";
+    var subject = document.getElementById("jobSubject").value;
+    var details = document.getElementById("jobDetails").value;
+    var links = document.getElementById("jobLink").value;
 
-    if(invite_email=='FROM_MODAL')
-        invite_email= document.getElementById("invite_email").value;
+    $.post("../php/postjob.php", {
 
-    console.log("invite email: "+invite_email );
-
-    $.post("../php/admin-invite-send.php", {
-
-        invite_email: invite_email,
-        from: "admin"
-
+        mail: email,
+        sub : subject,
+        det : details,
+        lin : links
     }, function (data) {
-
         console.log(data);
-
-        if (data.includes("success")) {
-
-            console.log("invite sent");
-
+        if(data.includes("1")){
             new PNotify({
                 title: 'Success',
-                text: "Invitation sent!",
+                text: "Job is posted",
                 type: 'success',
                 styling: 'bootstrap3'
             });
-
-
-        }
-        else {
-            console.log("error: "+data);
+            $('#job-modal').modal('hide');
+            get_job_posts();
+        }else{
             new PNotify({
-                title: 'Error :(',
+                title: 'Failed',
                 text: data,
-                type: 'error',
+                type: 'warning',
                 styling: 'bootstrap3'
             });
         }
     });
-
-    $('#invite-modal').modal('hide');
-    remove(invite_email);
 }

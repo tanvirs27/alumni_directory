@@ -70,6 +70,7 @@
     </div>
     <!-- /.container -->
 </nav>
+
 <div class="modal fade" id="job-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
         <div class="loginmodal-container">
@@ -79,7 +80,7 @@
             <form id="jobSubmission">
                 <input id="jobSubject" type="text" name="subject" placeholder="Subject" required>
                 <textarea id="jobDetails" type="text" name="body" placeholder="Details" style="height: 200px; width: 100%;font-size: 16px;" required></textarea>
-                <input id="jobLink" type="text" name="body" placeholder="Link (optional)">
+                <input id="jobLink" type="url" pattern="https?://.+" name="body" placeholder="Link (optional)">
                 <input id="jobsubmitbutton" type="submit" name="login" class="login loginmodal-submit" value="Post Job">
             </form>
         </div>
