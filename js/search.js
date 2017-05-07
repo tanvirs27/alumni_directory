@@ -28,7 +28,7 @@ $(document).ready(function () {
 
     if(email==null){
 
-        window.location.href="index";
+        window.location.href="index.html";
     }
 
     var email1 = sessionStorage.getItem("user_email_login");
@@ -66,6 +66,13 @@ $(document).ready(function () {
 
 
     });
+
+
+    $('#jobSubmission').submit(function (e) {
+        e.preventDefault();
+        postJob();
+    });
+
 
 });
 
@@ -182,5 +189,82 @@ function search_it() {
 function signout() {
     sessionStorage.removeItem("user_email_login");
 
-    window.location.href="index";
+    window.location.href="index.html";
+}
+
+
+function invite() {
+    var invite_email= document.getElementById("invite_email").value.trim();
+    var from_email= sessionStorage.getItem("user_email_login");
+
+    console.log("inside invite");
+
+    $.post("php/invite-send.php", {
+
+        invite_email: invite_email,
+        from: from_email
+
+    }, function (data) {
+
+        console.log(data);
+
+        if (data.includes("success")) {
+
+            console.log("invite sent");
+
+            new PNotify({
+                title: 'Success',
+                text: "Invitation sent!",
+                type: 'success',
+                styling: 'bootstrap3'
+            });
+
+
+        }
+        else {
+            console.log("error: "+data);
+            new PNotify({
+                title: 'Error :(',
+                text: data,
+                type: 'error',
+                styling: 'bootstrap3'
+            });
+        }
+    });
+
+    $('#invite-modal').modal('hide');
+}
+
+
+function postJob() {
+    var email=sessionStorage.getItem("user_email_login");
+    var subject = document.getElementById("jobSubject").value;
+    var details = document.getElementById("jobDetails").value;
+    var links = document.getElementById("jobLink").value;
+
+    $.post("php/postjob.php", {
+
+        mail: email,
+        sub : subject,
+        det : details,
+        lin : links
+    }, function (data) {
+        console.log(data);
+        if(data.includes("1")){
+            new PNotify({
+                title: 'Success',
+                text: "Successfully Posted. Reload Your Browser",
+                type: 'success',
+                styling: 'bootstrap3'
+            });
+            $('#job-modal').modal('hide');
+        }else{
+            new PNotify({
+                title: 'Failed',
+                text: data.toString(),
+                type: 'warning',
+                styling: 'bootstrap3'
+            });
+        }
+    });
 }

@@ -9,15 +9,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>CSEDU Alumni Directory</title>
-
+    <title>Search | CSEDU Alumni Directory</title>
+    <link rel="shortcut icon" href="img/images.png">
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/modals.css">
     <link href="css/search.css" rel="stylesheet">
-
+    <link href="lib/pnotify/dist/pnotify.css" rel="stylesheet">
 
     <!-- Custom CSS -->
 
@@ -62,11 +62,11 @@
                 </li>
 
                 <li>
-                    <a href="#">Invite</a>
+                    <a  href='#' data-target='#invite-modal' data-toggle="modal">Invite</a>
                 </li>
 
                 <li>
-                    <a href="#">Post Job</a>
+                    <a  href='#' data-target='#job-modal' data-toggle="modal">Post Job</a>
                 </li>
 
                 <li>
@@ -82,6 +82,39 @@
     </div>
     <!-- /.container -->
 </nav>
+
+
+<div class="modal fade" id="job-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
+            <span onclick="$('#job-modal').modal('hide');"
+                  class="close" title="Close Modal">&times;</span>
+            <h1>Job Circular</h1><br>
+            <form id="jobSubmission">
+                <input id="jobSubject" type="text" name="subject" placeholder="Subject" required>
+                <textarea id="jobDetails" type="text" name="body" placeholder="Details" style="height: 200px; width: 100%;font-size: 16px;" required></textarea>
+                <input id="jobLink" type="url" pattern="https?://.+" name="body" placeholder="Link (optional)">
+                <input id="jobsubmitbutton" type="submit" name="login" class="login loginmodal-submit" value="Post Job">
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="invite-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
+            <span onclick="$('#invite-modal').modal('hide');"
+                  class="close" title="Close Modal">&times;</span>
+            <h1>Invite CSEDU Alumni</h1><br>
+            <form id="invite_form" action="javascript:invite();">
+                <input id="invite_email" type="email" name="email" placeholder="invite@email.com" required>
+                <input id="invite_submit" type="submit" name="login" class="login loginmodal-submit" value="Send">
+            </form>
+        </div>
+    </div>
+</div>
+
+
 
 <!-- Page Content -->
 <div class="container">
@@ -283,6 +316,10 @@
 <script src="js/bootstrap.min.js"></script>
 
 <script type="text/javascript" src="js/search.js"></script>
+
+<!-- PNotify -->
+<script src="lib/pnotify/dist/pnotify.js"></script>
+
 
 
 </body>

@@ -114,6 +114,15 @@ function loading() {
 }
 $(document).ready(function() {
 
+
+    var email=sessionStorage.getItem("user_email_login");
+
+    if(email==null){
+
+        window.location.href="index.html";
+    }
+
+
     loading();
     var email1 = sessionStorage.getItem("user_email_login");
 
@@ -224,7 +233,11 @@ function uploadImage(input) {
     }
 }
 
+function signout() {
+    sessionStorage.removeItem("user_email_login");
 
+    window.location.href="index.html";
+}
 
 
 
