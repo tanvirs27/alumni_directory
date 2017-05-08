@@ -184,6 +184,8 @@ function sendMail() {
                 type: 'success',
                 styling: 'bootstrap3'
             });
+
+            document.getElementById("mail-form").reset();
         }else{
             new PNotify({
                 title: 'Error :(',
